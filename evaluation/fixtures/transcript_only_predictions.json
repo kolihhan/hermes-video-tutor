@@ -1,0 +1,33 @@
+[
+  {
+    "case_id": "q-transcript",
+    "answer": "FINAL: retrieve evidence, reason over it, and answer [E1]",
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "kind": "transcript",
+        "start_s": 0.0,
+        "end_s": 2.8
+      }
+    ],
+    "tool_calls": [
+      "search_transcript"
+    ]
+  },
+  {
+    "case_id": "q-visual",
+    "answer": "INSUFFICIENT_EVIDENCE",
+    "evidence": [],
+    "tool_calls": [
+      "search_transcript"
+    ]
+  },
+  {
+    "case_id": "q-temporal",
+    "answer": "INSUFFICIENT_EVIDENCE",
+    "evidence": [],
+    "tool_calls": [
+      "search_transcript"
+    ]
+  }
+]

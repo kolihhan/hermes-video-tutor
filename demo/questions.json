@@ -1,0 +1,5 @@
+[
+  {"id":"q-transcript","type":"transcript","question":"What are the three stages of the tutor pipeline?"},
+  {"id":"q-visual","type":"visual","question":"What color is the highlighted component around 4 seconds?"},
+  {"id":"q-temporal","type":"temporal","question":"What color does the screen change to after Run is clicked?"}
+]

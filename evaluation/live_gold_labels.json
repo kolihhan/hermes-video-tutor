@@ -1,0 +1,14 @@
+[
+  {"case_id":"p3-t01","reference_answer":"orion","accepted_aliases":[],"required_modality":"transcript","expected_evidence_window":[0,5]},
+  {"case_id":"p3-t02","reference_answer":"collect compare decide","accepted_aliases":["collect, compare, decide","collect compare and decide","collect and compare and decide"],"required_modality":"transcript","expected_evidence_window":[5,10]},
+  {"case_id":"p3-t03","reference_answer":"five minutes","accepted_aliases":["5 minutes","five min","5 min","5"],"required_modality":"transcript","expected_evidence_window":[10,15]},
+  {"case_id":"p3-t04","reference_answer":"atlas","accepted_aliases":[],"required_modality":"transcript","expected_evidence_window":[15,20]},
+  {"case_id":"p3-t05","reference_answer":"two attempts","accepted_aliases":["2 attempts","two tries","2 tries","2"],"required_modality":"transcript","expected_evidence_window":[20,25]},
+  {"case_id":"p3-t06","reference_answer":"ready","accepted_aliases":[],"required_modality":"transcript","expected_evidence_window":[25,30]},
+  {"case_id":"p3-v01","reference_answer":"blue","accepted_aliases":[],"required_modality":"visual","expected_evidence_window":[30,35]},
+  {"case_id":"p3-v02","reference_answer":"seven","accepted_aliases":["7"],"required_modality":"visual","expected_evidence_window":[35,40]},
+  {"case_id":"p3-v03","reference_answer":"square","accepted_aliases":[],"required_modality":"visual","expected_evidence_window":[40,45]},
+  {"case_id":"p3-v04","reference_answer":"right","accepted_aliases":["to the right","rightward"],"required_modality":"visual","expected_evidence_window":[45,50]},
+  {"case_id":"p3-v05","reference_answer":"go","accepted_aliases":[],"required_modality":"visual","expected_evidence_window":[50,55]},
+  {"case_id":"p3-v06","reference_answer":"green","accepted_aliases":[],"required_modality":"visual","expected_evidence_window":[55,60]}
+]

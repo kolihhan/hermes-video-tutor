@@ -1,0 +1,5 @@
+[
+  {"segment_id":"s1","start_s":0.0,"end_s":2.8,"text":"The tutor pipeline has three stages: retrieve evidence, reason over it, and answer."},
+  {"segment_id":"s2","start_s":3.0,"end_s":5.8,"text":"The highlighted component is visible on the slide now."},
+  {"segment_id":"s3","start_s":6.0,"end_s":8.8,"text":"Now I click Run and the result changes on screen."}
+]

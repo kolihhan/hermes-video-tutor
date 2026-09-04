@@ -1,0 +1,6 @@
+{
+  "course_id": "demo",
+  "title": "Evidence-Aware Tutor Demo",
+  "video_path": "lecture.mp4",
+  "transcript_path": "transcript.json"
+}

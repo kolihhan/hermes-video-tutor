@@ -1,0 +1,6 @@
+{
+  "course_id": "p3-fixture",
+  "title": "Self-authored P3 fixture",
+  "video_path": "media/lecture.mp4",
+  "transcript_path": "transcript.json"
+}

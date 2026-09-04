@@ -1,0 +1,956 @@
+{
+  "schema_version": "video-tutor-live-paired/v1",
+  "complete": false,
+  "verdict": "INSUFFICIENT",
+  "started_at_utc": "2026-08-29T06:47:10.977468+00:00",
+  "finished_at_utc": "2026-08-29T06:48:03.421883+00:00",
+  "wall_time_ms": 52443.77290000557,
+  "question_ids": [
+    "p3-t01",
+    "p3-t02",
+    "p3-t03",
+    "p3-t04",
+    "p3-t05",
+    "p3-t06",
+    "p3-v01",
+    "p3-v02",
+    "p3-v03",
+    "p3-v04",
+    "p3-v05",
+    "p3-v06"
+  ],
+  "condition_order": [
+    {
+      "case_id": "p3-t01",
+      "order": [
+        "transcript_only",
+        "multimodal"
+      ]
+    },
+    {
+      "case_id": "p3-t02",
+      "order": [
+        "multimodal",
+        "transcript_only"
+      ]
+    },
+    {
+      "case_id": "p3-t03",
+      "order": [
+        "transcript_only",
+        "multimodal"
+      ]
+    },
+    {
+      "case_id": "p3-t04",
+      "order": [
+        "multimodal",
+        "transcript_only"
+      ]
+    },
+    {
+      "case_id": "p3-t05",
+      "order": [
+        "transcript_only",
+        "multimodal"
+      ]
+    },
+    {
+      "case_id": "p3-t06",
+      "order": [
+        "multimodal",
+        "transcript_only"
+      ]
+    },
+    {
+      "case_id": "p3-v01",
+      "order": [
+        "transcript_only",
+        "multimodal"
+      ]
+    },
+    {
+      "case_id": "p3-v02",
+      "order": [
+        "multimodal",
+        "transcript_only"
+      ]
+    },
+    {
+      "case_id": "p3-v03",
+      "order": [
+        "transcript_only",
+        "multimodal"
+      ]
+    },
+    {
+      "case_id": "p3-v04",
+      "order": [
+        "multimodal",
+        "transcript_only"
+      ]
+    },
+    {
+      "case_id": "p3-v05",
+      "order": [
+        "transcript_only",
+        "multimodal"
+      ]
+    },
+    {
+      "case_id": "p3-v06",
+      "order": [
+        "multimodal",
+        "transcript_only"
+      ]
+    }
+  ],
+  "conditions": {
+    "transcript_only": {
+      "tool_mode": "transcript_only",
+      "aggregate": {
+        "cases": 12,
+        "answer_correct": {
+          "overall": 0.0,
+          "transcript_only": 0.0,
+          "visual_required": 0.0
+        },
+        "full_pass": {
+          "overall": 0.0,
+          "transcript_only": 0.0,
+          "visual_required": 0.0
+        },
+        "visual_tool_use_on_visual_required": 0.0,
+        "unnecessary_visual_use_on_transcript": 0.0,
+        "total_tool_calls": 0,
+        "average_tool_calls": 0.0,
+        "mean_latency_ms": 2367.613908330289,
+        "p50_latency_ms": 1969.7053999989294,
+        "p95_latency_ms": 6633.167799998773,
+        "failure_or_abstention_count": 12,
+        "usage": {
+          "api_calls": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "estimated_cost_usd": null
+        },
+        "per_case": [
+          {
+            "case_id": "p3-t01",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 6633.167799998773,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-t02",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1992.6742000097875,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-t03",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 2011.2528000026941,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-t04",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1948.2056999986526,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-t05",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1958.322099992074,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-t06",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1901.1876000149641,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-v01",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1956.324599974323,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-v02",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1931.919900001958,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-v03",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 2069.518499978585,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-v04",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 2059.712699992815,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-v05",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1979.375599999912,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-v06",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1969.7053999989294,
+            "tool_calls": [],
+            "usage": {}
+          }
+        ],
+        "hermes_process_invocations": 12
+      },
+      "predictions": [
+        {
+          "case_id": "p3-t01",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 6633.167799998773,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-t02",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1992.6742000097875,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-t03",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 2011.2528000026941,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-t04",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1948.2056999986526,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-t05",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1958.322099992074,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-t06",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1901.1876000149641,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-v01",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1956.324599974323,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-v02",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1931.919900001958,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-v03",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 2069.518499978585,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-v04",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 2059.712699992815,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-v05",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1979.375599999912,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-v06",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1969.7053999989294,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        }
+      ]
+    },
+    "multimodal": {
+      "tool_mode": "multimodal",
+      "aggregate": {
+        "cases": 12,
+        "answer_correct": {
+          "overall": 0.0,
+          "transcript_only": 0.0,
+          "visual_required": 0.0
+        },
+        "full_pass": {
+          "overall": 0.0,
+          "transcript_only": 0.0,
+          "visual_required": 0.0
+        },
+        "visual_tool_use_on_visual_required": 0.0,
+        "unnecessary_visual_use_on_transcript": 0.0,
+        "total_tool_calls": 0,
+        "average_tool_calls": 0.0,
+        "mean_latency_ms": 2002.619458330931,
+        "p50_latency_ms": 1967.0008999819402,
+        "p95_latency_ms": 2259.8002000013366,
+        "failure_or_abstention_count": 12,
+        "usage": {
+          "api_calls": null,
+          "input_tokens": null,
+          "output_tokens": null,
+          "total_tokens": null,
+          "estimated_cost_usd": null
+        },
+        "per_case": [
+          {
+            "case_id": "p3-t01",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 2259.8002000013366,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-t02",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1994.3395000009332,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-t03",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 2066.9928999850526,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-t04",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1967.0008999819402,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-t05",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 2009.2027999926358,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-t06",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1905.8750999975018,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-v01",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1922.4639000021853,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-v02",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1920.368100021733,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-v03",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 2146.6556999948807,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-v04",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1911.7202000052202,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-v05",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1958.52789998753,
+            "tool_calls": [],
+            "usage": {}
+          },
+          {
+            "case_id": "p3-v06",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "",
+            "status": "runtime_error",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 1968.4863000002224,
+            "tool_calls": [],
+            "usage": {}
+          }
+        ],
+        "hermes_process_invocations": 12
+      },
+      "predictions": [
+        {
+          "case_id": "p3-t01",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 2259.8002000013366,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-t02",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1994.3395000009332,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-t03",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 2066.9928999850526,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-t04",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1967.0008999819402,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-t05",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 2009.2027999926358,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-t06",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1905.8750999975018,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-v01",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1922.4639000021853,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-v02",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1920.368100021733,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-v03",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 2146.6556999948807,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-v04",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1911.7202000052202,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-v05",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1958.52789998753,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        },
+        {
+          "case_id": "p3-v06",
+          "answer": "",
+          "status": "runtime_error",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "latency_ms": 1968.4863000002224,
+          "error": {
+            "type": "HermesRuntimeError",
+            "message": "Hermes failed: hermes -z: agent failed: Model qwen3.5-hermes:4b has a context window of 32,768 tokens, which is below the minimum 64,000 required by Hermes Agent.  Choose a model with at least 64K context.  If your server reports a window smaller than the model's true window, set model.context_length in config.yaml to the real value (this must be at least 64K)."
+          }
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "cases_sha256": "8a67946bf34ff93d52255fde38dc66a8f4e3ad187924011dea0cb2091ec314c7",
+    "gold_sha256": "f01a3bb27463121099c2dacd47a8252211e5a2382d7468a8f1a0f2e0ec09d7ac",
+    "fixture": {
+      "license": "CC0-1.0",
+      "source": "self-authored geometric/text instructions; no external media",
+      "generator": "scripts\\generate_fixture.py",
+      "generator_sha256": "b7dd8b159b00ff212a93e25da53f5cd0e7520b1d3d612ef75aad0482721aa940",
+      "ffmpeg_version": "ffmpeg version 9.0-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+      "font": "C:\\Windows\\Fonts\\arial.ttf",
+      "font_sha256": "b3658eadae55e682b5f69eb64c439c1ecc8f196c0bb8d4756d145d13bc86476a",
+      "asset_sha256": {
+        "course.json": "4fe054828363d4aaa266eedebb2741ac4f1c39dc9cfe3f69a4095b14abf7e5c9",
+        "transcript.json": "bee35806cc823bf34e4f1cd730a05317b49cee531b1f396fa8ae5b0d718a4942",
+        "media/lecture.mp4": "dbb606211decf4ddb5390f97d54687461f5686784442086b52d4806c2d1e99c9"
+      },
+      "duration_s": 60,
+      "provenance_sha256": "d572087e4c39d2b24c53f65848e0b53c4d0fcd78c5d7cdcbcdacab1a0c5d1b9f",
+      "measured_duration_s": 60.0
+    },
+    "model": {
+      "tag": "qwen3.5-hermes:4b",
+      "digest": "6f134ed003034f79398e9dbe1cb34fb8f582cbcd806937d76ae0f26fc61e8ab2",
+      "base_tag": "qwen3.5:4b",
+      "base_digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "size_bytes": 3389983489,
+      "details": {
+        "parent_model": "qwen3.5:4b",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "4.7B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 262144,
+        "embedding_length": 2560
+      },
+      "capabilities": [
+        "vision",
+        "completion",
+        "tools",
+        "thinking"
+      ],
+      "parameters": {
+        "temperature": "1",
+        "top_k": "20",
+        "top_p": "0.95",
+        "num_ctx": "32768",
+        "presence_penalty": "1.5"
+      }
+    },
+    "hermes": {
+      "release": "v0.20.4",
+      "revision": "8911e2e0edf750b104edbdc106d63d6cdac88524",
+      "sparse_checkout": [
+        "/*",
+        "!/contributors/"
+      ],
+      "executable_sha256": "d9ae5804201825ecff8ff76d9c2451a5435e3f714dbddc30ede8e42d008cdc54",
+      "config_sha256": "c640cdecd2648dc28aff7ff163eb0cfb19676ebf0780bd3804400dfbe04a6af7"
+    },
+    "tool_surfaces": {
+      "transcript_only": [
+        "expand_context",
+        "search_transcript"
+      ],
+      "multimodal": [
+        "expand_context",
+        "inspect_clip",
+        "inspect_frame",
+        "search_transcript"
+      ]
+    },
+    "implementation_sha256": {
+      "src/video_tutor/__init__.py": "604cb4fe7d2fd14e21db3b8d90a4f2d6437a355a9e9dd4bb01c3d75e25eb32b7",
+      "src/video_tutor/activity.py": "ef8c3524056e9653138016a79640afd9100a5628098b31a7958ecaa2c99165ae",
+      "src/video_tutor/bootstrap.py": "6dad04d406f56a19a009cfbb7fe00ad12752b78cb7f8ab216d89ef2a6eec1a39",
+      "src/video_tutor/cli.py": "09937fb43d7ba99b6c34a0532673f9eb946cfed24d4042c6476465f7e448d528",
+      "src/video_tutor/contracts.py": "c33d918787c039ad91986256eb51e2df46fc39b4b9aa95b60c771f17e36a0baa",
+      "src/video_tutor/course.py": "c38181cfa2b709ffec1469996497f6bbfbec2ec3361da3e7bd08d664234cc50c",
+      "src/video_tutor/evidence.py": "f5865b04fcaba3b155d01bf4b0b932a11477e178ca8a8c7a1f1d41d96ee0f5b8",
+      "src/video_tutor/hermes_runtime.py": "e7a2d9731eada5dfd909f4dbe41755df31e00bbe631f1a3351f77e72d95d3d2d",
+      "src/video_tutor/media.py": "92a871f2601681bb47a00d624ab7ddcc25eab3235e0e2921adf9105520e62d1d",
+      "src/video_tutor/plugin_bridge.py": "c8f6210543900e7da6c6bca1e73e60576ee77568c73977c656e6e3fd6498b39d",
+      "src/video_tutor/tool_runtime.py": "43702fd1e5ee3a5645959329b6d68e2ae41570d0c239c195f8a9b033e9385910",
+      "src/video_tutor/transcript.py": "82feb7c8797438a629efa90e90a801faf7ba1032404998ba8a3026d34e89a79c",
+      "src/video_tutor/tutor.py": "e2c9bf2cf1f767e5d19088e347d8f64bc5d561ca45fd700548a7c83f95152e3c",
+      ".hermes/plugins/video_tutor/__init__.py": "148857c1e0f4f8bdd1ed451106dcd07a95ce80c7cb357b472acf37b0a47b414d",
+      ".hermes/plugins/video_tutor/plugin.yaml": "0e948ff12cf52cec483695287ecc58c77ef960669e4de9f2e14c0264aacedd53",
+      "evaluation/evaluate.py": "da29348c228b6388a7d592f990dc0ee55604f5bde13ed2372c80601a30b48bdb",
+      "evaluation/run_live_paired.py": "fba7b0b32c67058e6c2ef7e68b50dc5db3617f7c7f9fe0c871f94967720fb522",
+      "scripts/generate_fixture.py": "b7dd8b159b00ff212a93e25da53f5cd0e7520b1d3d612ef75aad0482721aa940",
+      "scripts/setup-hermes.ps1": "5804a19d29306227b33cabc716fa4ddf3c0a02a798dfab548ffcf262d5ebfecf",
+      "config/hermes-project.yaml": "c640cdecd2648dc28aff7ff163eb0cfb19676ebf0780bd3804400dfbe04a6af7",
+      "Modelfile.hermes": "657bdc8784306a97c67817e8f42951d5da41aa70e83d89106e53a26d341f084b",
+      "hermes.lock": "939b80cda45f4070fc888c169c7d55b9165c1b4eab305ad45d1630bc3cc87583",
+      "pyproject.toml": "b13173034742c798c9e37d6c07e3725bacf55ffe323ad4f3fdb314de2b526b72",
+      "uv.lock": "4d945ecc5edf85578d21790166d56a72d55f2f6ee7c3760ad576ce77e425a839"
+    },
+    "timeout_s": 600
+  }
+}

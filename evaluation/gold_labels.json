@@ -1,0 +1,20 @@
+[
+  {
+    "case_id": "q-transcript",
+    "reference_answer": "retrieve evidence, reason over it, and answer",
+    "required_modality": "transcript",
+    "expected_evidence_window": [0.0, 2.8]
+  },
+  {
+    "case_id": "q-visual",
+    "reference_answer": "blue",
+    "required_modality": "visual",
+    "expected_evidence_window": [3.0, 5.8]
+  },
+  {
+    "case_id": "q-temporal",
+    "reference_answer": "green",
+    "required_modality": "clip",
+    "expected_evidence_window": [6.0, 8.8]
+  }
+]

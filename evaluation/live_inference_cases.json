@@ -1,0 +1,14 @@
+[
+  {"case_id":"p3-t01","question":"What is the project codename?","course":"evaluation/fixture/course.json"},
+  {"case_id":"p3-t02","question":"What are the three workflow stages?","course":"evaluation/fixture/course.json"},
+  {"case_id":"p3-t03","question":"What is the checkpoint interval?","course":"evaluation/fixture/course.json"},
+  {"case_id":"p3-t04","question":"Which team owns this?","course":"evaluation/fixture/course.json"},
+  {"case_id":"p3-t05","question":"What is the retry limit?","course":"evaluation/fixture/course.json"},
+  {"case_id":"p3-t06","question":"What is the final readiness signal?","course":"evaluation/fixture/course.json"},
+  {"case_id":"p3-v01","question":"At checkpoint A around 32 seconds, what color is the large panel?","course":"evaluation/fixture/course.json"},
+  {"case_id":"p3-v02","question":"At checkpoint B around 37 seconds, what number is shown?","course":"evaluation/fixture/course.json"},
+  {"case_id":"p3-v03","question":"At checkpoint C around 42 seconds, what word is on the left?","course":"evaluation/fixture/course.json"},
+  {"case_id":"p3-v04","question":"At checkpoint D around 47 seconds, which direction does the chevron point?","course":"evaluation/fixture/course.json"},
+  {"case_id":"p3-v05","question":"At checkpoint E around 52 seconds, what status word is shown?","course":"evaluation/fixture/course.json"},
+  {"case_id":"p3-v06","question":"At checkpoint F around 57 seconds, what is the full-screen background color?","course":"evaluation/fixture/course.json"}
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "case_id": "q-transcript",
+    "question": "What are the three stages of the tutor pipeline?",
+    "course": "../demo/course.json"
+  },
+  {
+    "case_id": "q-visual",
+    "question": "What color is the highlighted component around 4 seconds?",
+    "course": "../demo/course.json"
+  },
+  {
+    "case_id": "q-temporal",
+    "question": "What color does the screen change to after Run is clicked?",
+    "course": "../demo/course.json"
+  }
+]

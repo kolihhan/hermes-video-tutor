@@ -1,0 +1,68 @@
+[
+  {
+    "case_id": "q-transcript",
+    "answer": "FINAL: retrieve evidence, reason over it, and answer [E1]",
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "kind": "transcript",
+        "start_s": 0.0,
+        "end_s": 2.8
+      }
+    ],
+    "tool_calls": [
+      "search_transcript"
+    ]
+  },
+  {
+    "case_id": "q-visual",
+    "answer": "FINAL: blue [E2]",
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "kind": "transcript",
+        "start_s": 3.0,
+        "end_s": 5.8
+      },
+      {
+        "evidence_id": "E2",
+        "kind": "frame",
+        "start_s": 4.0,
+        "end_s": 4.0
+      }
+    ],
+    "tool_calls": [
+      "search_transcript",
+      "inspect_frame"
+    ]
+  },
+  {
+    "case_id": "q-temporal",
+    "answer": "FINAL: green [E3]",
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "kind": "transcript",
+        "start_s": 6.0,
+        "end_s": 8.8
+      },
+      {
+        "evidence_id": "E2",
+        "kind": "frame",
+        "start_s": 6.2,
+        "end_s": 6.2
+      },
+      {
+        "evidence_id": "E3",
+        "kind": "clip",
+        "start_s": 6.0,
+        "end_s": 8.8
+      }
+    ],
+    "tool_calls": [
+      "search_transcript",
+      "inspect_frame",
+      "inspect_clip"
+    ]
+  }
+]

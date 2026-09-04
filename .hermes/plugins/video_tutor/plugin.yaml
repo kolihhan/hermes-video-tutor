@@ -1,0 +1,8 @@
+name: video_tutor
+version: 0.1.0
+description: Transcript and visual evidence tools for the Hermes Video Tutor demo.
+provides_tools:
+  - search_transcript
+  - expand_context
+  - inspect_frame
+  - inspect_clip

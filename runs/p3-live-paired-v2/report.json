@@ -1,0 +1,4145 @@
+{
+  "schema_version": "video-tutor-live-paired/v2",
+  "complete": true,
+  "verdict": "KEEP HERMES",
+  "started_at_utc": "2026-08-30T03:54:31.440573+00:00",
+  "finished_at_utc": "2026-08-30T04:43:06.343027+00:00",
+  "wall_time_ms": 2914653.0501000015,
+  "question_ids": [
+    "p3-t01",
+    "p3-t02",
+    "p3-t03",
+    "p3-t04",
+    "p3-t05",
+    "p3-t06",
+    "p3-v01",
+    "p3-v02",
+    "p3-v03",
+    "p3-v04",
+    "p3-v05",
+    "p3-v06"
+  ],
+  "condition_order": [
+    {
+      "case_id": "p3-t01",
+      "order": [
+        "transcript_only",
+        "multimodal"
+      ]
+    },
+    {
+      "case_id": "p3-t02",
+      "order": [
+        "multimodal",
+        "transcript_only"
+      ]
+    },
+    {
+      "case_id": "p3-t03",
+      "order": [
+        "transcript_only",
+        "multimodal"
+      ]
+    },
+    {
+      "case_id": "p3-t04",
+      "order": [
+        "multimodal",
+        "transcript_only"
+      ]
+    },
+    {
+      "case_id": "p3-t05",
+      "order": [
+        "transcript_only",
+        "multimodal"
+      ]
+    },
+    {
+      "case_id": "p3-t06",
+      "order": [
+        "multimodal",
+        "transcript_only"
+      ]
+    },
+    {
+      "case_id": "p3-v01",
+      "order": [
+        "transcript_only",
+        "multimodal"
+      ]
+    },
+    {
+      "case_id": "p3-v02",
+      "order": [
+        "multimodal",
+        "transcript_only"
+      ]
+    },
+    {
+      "case_id": "p3-v03",
+      "order": [
+        "transcript_only",
+        "multimodal"
+      ]
+    },
+    {
+      "case_id": "p3-v04",
+      "order": [
+        "multimodal",
+        "transcript_only"
+      ]
+    },
+    {
+      "case_id": "p3-v05",
+      "order": [
+        "transcript_only",
+        "multimodal"
+      ]
+    },
+    {
+      "case_id": "p3-v06",
+      "order": [
+        "multimodal",
+        "transcript_only"
+      ]
+    }
+  ],
+  "conditions": {
+    "transcript_only": {
+      "tool_mode": "transcript_only",
+      "aggregate": {
+        "cases": 12,
+        "answer_correct": {
+          "overall": 0.16666666666666666,
+          "transcript_only": 0.3333333333333333,
+          "visual_required": 0.0
+        },
+        "full_pass": {
+          "overall": 0.16666666666666666,
+          "transcript_only": 0.3333333333333333,
+          "visual_required": 0.0
+        },
+        "visual_tool_use_on_visual_required": 0.0,
+        "unnecessary_visual_use_on_transcript": 0.0,
+        "total_tool_calls": 19,
+        "average_tool_calls": 1.5833333333333333,
+        "mean_latency_ms": 136358.800358333,
+        "p50_latency_ms": 111021.63700000528,
+        "p95_latency_ms": 343497.3863999985,
+        "failure_or_abstention_count": 7,
+        "usage": {
+          "api_calls": 73,
+          "input_tokens": 179118,
+          "output_tokens": 5984,
+          "total_tokens": 185102,
+          "estimated_cost_usd": 0.0
+        },
+        "per_case": [
+          {
+            "case_id": "p3-t01",
+            "answer_correct": false,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": false,
+            "answer": "FINAL: The project codename is Orion [E1]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 0.0,
+                "end_s": 5.0,
+                "text": "The project codename is Orion.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 1 transcript segment(s).",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ],
+            "latency_ms": 114478.50839999592,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 11153,
+              "output_tokens": 224,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 11377,
+              "api_calls": 5,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_115439_7d6622",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-t02",
+            "answer_correct": true,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": true,
+            "answer": "FINAL: collect, compare, decide [E1]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 5.0,
+                "end_s": 10.0,
+                "text": "The three workflow stages are collect, compare, decide.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 1 transcript segment(s).",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ],
+            "latency_ms": 55309.86959999427,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 6519,
+              "output_tokens": 164,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 6683,
+              "api_calls": 3,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_115807_d08b96",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-t03",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "Insufficient evidence to determine the answer from this lecture.",
+            "status": "insufficient_evidence",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 10.0,
+                "end_s": 15.0,
+                "text": "The checkpoint interval is five minutes.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E2",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E3",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E4",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E5",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E1",
+                  "E2",
+                  "E3",
+                  "E4",
+                  "E5"
+                ]
+              }
+            ],
+            "latency_ms": 58915.87499999878,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 6692,
+              "output_tokens": 137,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 6829,
+              "api_calls": 3,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_115904_839b84",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-t04",
+            "answer_correct": true,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": true,
+            "answer": "FINAL: Atlas [E1]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 15.0,
+                "end_s": 20.0,
+                "text": "The owning team is Atlas.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 1 transcript segment(s).",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ],
+            "latency_ms": 78167.22209999716,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 8756,
+              "output_tokens": 313,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 9069,
+              "api_calls": 4,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_120148_7e5cd6",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-t05",
+            "answer_correct": false,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": false,
+            "answer": "FINAL: The retry limit is two attempts [E1]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 20.0,
+                "end_s": 25.0,
+                "text": "The retry limit is two attempts.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 1 transcript segment(s).",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ],
+            "latency_ms": 46751.99099999736,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 6512,
+              "output_tokens": 132,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 6644,
+              "api_calls": 3,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_120306_8ce651",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-t06",
+            "answer_correct": false,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": false,
+            "answer": "FINAL: The final readiness signal is ready [E1]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 25.0,
+                "end_s": 30.0,
+                "text": "The final readiness signal is ready.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 1 transcript segment(s).",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ],
+            "latency_ms": 44093.65380000236,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 4316,
+              "output_tokens": 124,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 4440,
+              "api_calls": 2,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_120516_0261ff",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-v01",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "Insufficient evidence to determine the answer from this lecture.",
+            "status": "insufficient_evidence",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 181830.33250000153,
+            "tool_calls": [],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 18717,
+              "output_tokens": 753,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 19470,
+              "api_calls": 8,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_120600_481104",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-v02",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "Insufficient evidence to determine the answer from this lecture.",
+            "status": "insufficient_evidence",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E2",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E3",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E4",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E5",
+                "kind": "transcript",
+                "start_s": 50.0,
+                "end_s": 55.0,
+                "text": "Checkpoint E is visible now.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E1",
+                  "E2",
+                  "E3",
+                  "E4",
+                  "E5"
+                ]
+              }
+            ],
+            "latency_ms": 111021.63700000528,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 11371,
+              "output_tokens": 388,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 11759,
+              "api_calls": 5,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_121449_e43fc2",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-v03",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "Insufficient evidence to determine the answer from this lecture.",
+            "status": "insufficient_evidence",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E2",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E3",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E4",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E5",
+                "kind": "transcript",
+                "start_s": 50.0,
+                "end_s": 55.0,
+                "text": "Checkpoint E is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E6",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E7",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E8",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E9",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E10",
+                "kind": "transcript",
+                "start_s": 50.0,
+                "end_s": 55.0,
+                "text": "Checkpoint E is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E11",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E12",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E13",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E14",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E15",
+                "kind": "transcript",
+                "start_s": 50.0,
+                "end_s": 55.0,
+                "text": "Checkpoint E is visible now.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E1",
+                  "E2",
+                  "E3",
+                  "E4",
+                  "E5"
+                ]
+              },
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E6",
+                  "E7",
+                  "E8",
+                  "E9",
+                  "E10"
+                ]
+              },
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E11",
+                  "E12",
+                  "E13",
+                  "E14",
+                  "E15"
+                ]
+              }
+            ],
+            "latency_ms": 170809.11010000273,
+            "tool_calls": [
+              "search_transcript",
+              "search_transcript",
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 17492,
+              "output_tokens": 783,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 18275,
+              "api_calls": 7,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_121640_a9bb6e",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-v04",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "Insufficient evidence to determine the answer from this lecture.",
+            "status": "insufficient_evidence",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E2",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E3",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E4",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E5",
+                "kind": "transcript",
+                "start_s": 50.0,
+                "end_s": 55.0,
+                "text": "Checkpoint E is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E6",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E7",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E8",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E9",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E10",
+                "kind": "transcript",
+                "start_s": 50.0,
+                "end_s": 55.0,
+                "text": "Checkpoint E is visible now.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E1",
+                  "E2",
+                  "E3",
+                  "E4",
+                  "E5"
+                ]
+              },
+              {
+                "tool": "search_transcript",
+                "summary": "Found 0 transcript segment(s).",
+                "evidence_ids": []
+              },
+              {
+                "tool": "search_transcript",
+                "summary": "Found 0 transcript segment(s).",
+                "evidence_ids": []
+              },
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E6",
+                  "E7",
+                  "E8",
+                  "E9",
+                  "E10"
+                ]
+              },
+              {
+                "tool": "search_transcript",
+                "summary": "Found 0 transcript segment(s).",
+                "evidence_ids": []
+              }
+            ],
+            "latency_ms": 218954.76580000104,
+            "tool_calls": [
+              "search_transcript",
+              "search_transcript",
+              "search_transcript",
+              "search_transcript",
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 26020,
+              "output_tokens": 874,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 26894,
+              "api_calls": 10,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_122316_c44003",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-v05",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "Insufficient evidence to determine the answer from this lecture.",
+            "status": "insufficient_evidence",
+            "evidence": [],
+            "activity": [],
+            "latency_ms": 212475.2526000011,
+            "tool_calls": [],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 30337,
+              "output_tokens": 750,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 31087,
+              "api_calls": 12,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_122702_7053f5",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-v06",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "Insufficient evidence to determine the answer from this lecture.",
+            "status": "insufficient_evidence",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 55.0,
+                "end_s": 60.0,
+                "text": "Checkpoint F is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E2",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E3",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E4",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E5",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E6",
+                "kind": "transcript",
+                "start_s": 55.0,
+                "end_s": 60.0,
+                "text": "Checkpoint F is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E7",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E8",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E9",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E10",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E11",
+                "kind": "transcript",
+                "start_s": 55.0,
+                "end_s": 60.0,
+                "text": "Checkpoint F is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E12",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E13",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E14",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E15",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E16",
+                "kind": "transcript",
+                "start_s": 55.0,
+                "end_s": 60.0,
+                "text": "Checkpoint F is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E17",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E18",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E19",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E20",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E1",
+                  "E2",
+                  "E3",
+                  "E4",
+                  "E5"
+                ]
+              },
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E6",
+                  "E7",
+                  "E8",
+                  "E9",
+                  "E10"
+                ]
+              },
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E11",
+                  "E12",
+                  "E13",
+                  "E14",
+                  "E15"
+                ]
+              },
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E16",
+                  "E17",
+                  "E18",
+                  "E19",
+                  "E20"
+                ]
+              }
+            ],
+            "latency_ms": 343497.3863999985,
+            "tool_calls": [
+              "search_transcript",
+              "search_transcript",
+              "search_transcript",
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 31233,
+              "output_tokens": 1342,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 32575,
+              "api_calls": 11,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_123724_43fafa",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          }
+        ],
+        "hermes_process_invocations": 12
+      },
+      "predictions": [
+        {
+          "case_id": "p3-t01",
+          "answer": "FINAL: The project codename is Orion [E1]",
+          "final_product_answer": "FINAL: The project codename is Orion [E1]",
+          "raw_model_answer": "FINAL: The project codename is Orion [E1]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 0.0,
+              "end_s": 5.0,
+              "text": "The project codename is Orion.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 1 transcript segment(s).",
+              "evidence_ids": [
+                "E1"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 11153,
+            "output_tokens": 224,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 11377,
+            "api_calls": 5,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_115439_7d6622",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 114478.50839999592
+        },
+        {
+          "case_id": "p3-t02",
+          "answer": "FINAL: collect, compare, decide [E1]",
+          "final_product_answer": "FINAL: collect, compare, decide [E1]",
+          "raw_model_answer": "FINAL: collect, compare, decide [E1]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 5.0,
+              "end_s": 10.0,
+              "text": "The three workflow stages are collect, compare, decide.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 1 transcript segment(s).",
+              "evidence_ids": [
+                "E1"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 6519,
+            "output_tokens": 164,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 6683,
+            "api_calls": 3,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_115807_d08b96",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 55309.86959999427
+        },
+        {
+          "case_id": "p3-t03",
+          "answer": "Insufficient evidence to determine the answer from this lecture.",
+          "final_product_answer": "Insufficient evidence to determine the answer from this lecture.",
+          "raw_model_answer": "FINAL: The checkpoint interval is five minutes [E1].",
+          "rejection_reason": "invalid_final_format",
+          "status": "insufficient_evidence",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 10.0,
+              "end_s": 15.0,
+              "text": "The checkpoint interval is five minutes.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E2",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E3",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E4",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E5",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "E5"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 6692,
+            "output_tokens": 137,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 6829,
+            "api_calls": 3,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_115904_839b84",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 58915.87499999878
+        },
+        {
+          "case_id": "p3-t04",
+          "answer": "FINAL: Atlas [E1]",
+          "final_product_answer": "FINAL: Atlas [E1]",
+          "raw_model_answer": "FINAL: Atlas [E1]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 15.0,
+              "end_s": 20.0,
+              "text": "The owning team is Atlas.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 1 transcript segment(s).",
+              "evidence_ids": [
+                "E1"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 8756,
+            "output_tokens": 313,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 9069,
+            "api_calls": 4,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_120148_7e5cd6",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 78167.22209999716
+        },
+        {
+          "case_id": "p3-t05",
+          "answer": "FINAL: The retry limit is two attempts [E1]",
+          "final_product_answer": "FINAL: The retry limit is two attempts [E1]",
+          "raw_model_answer": "FINAL: The retry limit is two attempts [E1]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 20.0,
+              "end_s": 25.0,
+              "text": "The retry limit is two attempts.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 1 transcript segment(s).",
+              "evidence_ids": [
+                "E1"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 6512,
+            "output_tokens": 132,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 6644,
+            "api_calls": 3,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_120306_8ce651",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 46751.99099999736
+        },
+        {
+          "case_id": "p3-t06",
+          "answer": "FINAL: The final readiness signal is ready [E1]",
+          "final_product_answer": "FINAL: The final readiness signal is ready [E1]",
+          "raw_model_answer": "FINAL: The final readiness signal is ready [E1]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 25.0,
+              "end_s": 30.0,
+              "text": "The final readiness signal is ready.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 1 transcript segment(s).",
+              "evidence_ids": [
+                "E1"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 4316,
+            "output_tokens": 124,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 4440,
+            "api_calls": 2,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_120516_0261ff",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 44093.65380000236
+        },
+        {
+          "case_id": "p3-v01",
+          "answer": "Insufficient evidence to determine the answer from this lecture.",
+          "final_product_answer": "Insufficient evidence to determine the answer from this lecture.",
+          "raw_model_answer": "INSUFFICIENT_EVIDENCE",
+          "rejection_reason": null,
+          "status": "insufficient_evidence",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 18717,
+            "output_tokens": 753,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 19470,
+            "api_calls": 8,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_120600_481104",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 181830.33250000153
+        },
+        {
+          "case_id": "p3-v02",
+          "answer": "Insufficient evidence to determine the answer from this lecture.",
+          "final_product_answer": "Insufficient evidence to determine the answer from this lecture.",
+          "raw_model_answer": "I cannot find specific evidence showing a number displayed at checkpoint B around 37 seconds in the available transcript or visual evidence. The transcript only confirms \"Checkpoint B is visible now\" [E1] without mentioning any displayed number.\n\nINSUFFICIENT_EVIDENCE",
+          "rejection_reason": "invalid_final_format",
+          "status": "insufficient_evidence",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E2",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E3",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E4",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E5",
+              "kind": "transcript",
+              "start_s": 50.0,
+              "end_s": 55.0,
+              "text": "Checkpoint E is visible now.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "E5"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 11371,
+            "output_tokens": 388,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 11759,
+            "api_calls": 5,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_121449_e43fc2",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 111021.63700000528
+        },
+        {
+          "case_id": "p3-v03",
+          "answer": "Insufficient evidence to determine the answer from this lecture.",
+          "final_product_answer": "Insufficient evidence to determine the answer from this lecture.",
+          "raw_model_answer": "INSUFFICIENT_EVIDENCE",
+          "rejection_reason": null,
+          "status": "insufficient_evidence",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E2",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E3",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E4",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E5",
+              "kind": "transcript",
+              "start_s": 50.0,
+              "end_s": 55.0,
+              "text": "Checkpoint E is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E6",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E7",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E8",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E9",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E10",
+              "kind": "transcript",
+              "start_s": 50.0,
+              "end_s": 55.0,
+              "text": "Checkpoint E is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E11",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E12",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E13",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E14",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E15",
+              "kind": "transcript",
+              "start_s": 50.0,
+              "end_s": 55.0,
+              "text": "Checkpoint E is visible now.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "E5"
+              ]
+            },
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E6",
+                "E7",
+                "E8",
+                "E9",
+                "E10"
+              ]
+            },
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E11",
+                "E12",
+                "E13",
+                "E14",
+                "E15"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript",
+            "search_transcript",
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 17492,
+            "output_tokens": 783,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 18275,
+            "api_calls": 7,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_121640_a9bb6e",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 170809.11010000273
+        },
+        {
+          "case_id": "p3-v04",
+          "answer": "Insufficient evidence to determine the answer from this lecture.",
+          "final_product_answer": "Insufficient evidence to determine the answer from this lecture.",
+          "raw_model_answer": "INSUFFICIENT_EVIDENCE",
+          "rejection_reason": null,
+          "status": "insufficient_evidence",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E2",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E3",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E4",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E5",
+              "kind": "transcript",
+              "start_s": 50.0,
+              "end_s": 55.0,
+              "text": "Checkpoint E is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E6",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E7",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E8",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E9",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E10",
+              "kind": "transcript",
+              "start_s": 50.0,
+              "end_s": 55.0,
+              "text": "Checkpoint E is visible now.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "E5"
+              ]
+            },
+            {
+              "tool": "search_transcript",
+              "summary": "Found 0 transcript segment(s).",
+              "evidence_ids": []
+            },
+            {
+              "tool": "search_transcript",
+              "summary": "Found 0 transcript segment(s).",
+              "evidence_ids": []
+            },
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E6",
+                "E7",
+                "E8",
+                "E9",
+                "E10"
+              ]
+            },
+            {
+              "tool": "search_transcript",
+              "summary": "Found 0 transcript segment(s).",
+              "evidence_ids": []
+            }
+          ],
+          "tool_calls": [
+            "search_transcript",
+            "search_transcript",
+            "search_transcript",
+            "search_transcript",
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 26020,
+            "output_tokens": 874,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 26894,
+            "api_calls": 10,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_122316_c44003",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 218954.76580000104
+        },
+        {
+          "case_id": "p3-v05",
+          "answer": "Insufficient evidence to determine the answer from this lecture.",
+          "final_product_answer": "Insufficient evidence to determine the answer from this lecture.",
+          "raw_model_answer": "INSUFFICIENT_EVIDENCE",
+          "rejection_reason": null,
+          "status": "insufficient_evidence",
+          "evidence": [],
+          "activity": [],
+          "tool_calls": [],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 30337,
+            "output_tokens": 750,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 31087,
+            "api_calls": 12,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_122702_7053f5",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 212475.2526000011
+        },
+        {
+          "case_id": "p3-v06",
+          "answer": "Insufficient evidence to determine the answer from this lecture.",
+          "final_product_answer": "Insufficient evidence to determine the answer from this lecture.",
+          "raw_model_answer": "Based on my search of the lecture transcript, I found that checkpoint F is visible around 55-60 seconds [E6]. However, the available transcript evidence only shows statements about checkpoint visibility and does not contain specific visual/frame data about the full-screen background color at that timestamp. The transcript searches have not returned any frame or clip evidence showing the actual background color at checkpoint F.\n\nFINAL: INSUFFICIENT_EVIDENCE",
+          "rejection_reason": "invalid_final_format",
+          "status": "insufficient_evidence",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 55.0,
+              "end_s": 60.0,
+              "text": "Checkpoint F is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E2",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E3",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E4",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E5",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E6",
+              "kind": "transcript",
+              "start_s": 55.0,
+              "end_s": 60.0,
+              "text": "Checkpoint F is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E7",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E8",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E9",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E10",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E11",
+              "kind": "transcript",
+              "start_s": 55.0,
+              "end_s": 60.0,
+              "text": "Checkpoint F is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E12",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E13",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E14",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E15",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E16",
+              "kind": "transcript",
+              "start_s": 55.0,
+              "end_s": 60.0,
+              "text": "Checkpoint F is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E17",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E18",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E19",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E20",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "E5"
+              ]
+            },
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E6",
+                "E7",
+                "E8",
+                "E9",
+                "E10"
+              ]
+            },
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E11",
+                "E12",
+                "E13",
+                "E14",
+                "E15"
+              ]
+            },
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E16",
+                "E17",
+                "E18",
+                "E19",
+                "E20"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript",
+            "search_transcript",
+            "search_transcript",
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 31233,
+            "output_tokens": 1342,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 32575,
+            "api_calls": 11,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_123724_43fafa",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 343497.3863999985
+        }
+      ]
+    },
+    "multimodal": {
+      "tool_mode": "multimodal",
+      "aggregate": {
+        "cases": 12,
+        "answer_correct": {
+          "overall": 0.5,
+          "transcript_only": 0.3333333333333333,
+          "visual_required": 0.6666666666666666
+        },
+        "full_pass": {
+          "overall": 0.5,
+          "transcript_only": 0.3333333333333333,
+          "visual_required": 0.6666666666666666
+        },
+        "visual_tool_use_on_visual_required": 1.0,
+        "unnecessary_visual_use_on_transcript": 0.0,
+        "total_tool_calls": 16,
+        "average_tool_calls": 1.3333333333333333,
+        "mean_latency_ms": 106527.17465000146,
+        "p50_latency_ms": 56766.87369999854,
+        "p95_latency_ms": 315325.71189999726,
+        "failure_or_abstention_count": 2,
+        "usage": {
+          "api_calls": 65,
+          "input_tokens": 166321,
+          "output_tokens": 4329,
+          "total_tokens": 170650,
+          "estimated_cost_usd": 0.0
+        },
+        "per_case": [
+          {
+            "case_id": "p3-t01",
+            "answer_correct": false,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": false,
+            "answer": "FINAL: The project codename is Orion [E1]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 0.0,
+                "end_s": 5.0,
+                "text": "The project codename is Orion.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 1 transcript segment(s).",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ],
+            "latency_ms": 56123.75790000078,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 4513,
+              "output_tokens": 88,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 4601,
+              "api_calls": 2,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_115628_e0bca1",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-t02",
+            "answer_correct": true,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": true,
+            "answer": "FINAL: Collect, compare, decide [E1]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 5.0,
+                "end_s": 10.0,
+                "text": "The three workflow stages are collect, compare, decide.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 1 transcript segment(s).",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ],
+            "latency_ms": 42587.87890000531,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 4517,
+              "output_tokens": 115,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 4632,
+              "api_calls": 2,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_115724_f588ff",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-t03",
+            "answer_correct": false,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": false,
+            "answer": "FINAL: < The checkpoint interval is five minutes > [E1]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 10.0,
+                "end_s": 15.0,
+                "text": "The checkpoint interval is five minutes.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E2",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E3",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E4",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E5",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E1",
+                  "E2",
+                  "E3",
+                  "E4",
+                  "E5"
+                ]
+              }
+            ],
+            "latency_ms": 50945.03750000149,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 6992,
+              "output_tokens": 129,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 7121,
+              "api_calls": 3,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_120001_36de0d",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-t04",
+            "answer_correct": true,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": true,
+            "answer": "FINAL: Atlas [E1]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 15.0,
+                "end_s": 20.0,
+                "text": "The owning team is Atlas.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 1 transcript segment(s).",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ],
+            "latency_ms": 56766.87369999854,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 6811,
+              "output_tokens": 186,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 6997,
+              "api_calls": 3,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_120052_822c05",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-t05",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "Insufficient evidence to determine the answer from this lecture.",
+            "status": "insufficient_evidence",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 20.0,
+                "end_s": 25.0,
+                "text": "The retry limit is two attempts.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 1 transcript segment(s).",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ],
+            "latency_ms": 40167.4925000043,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 4512,
+              "output_tokens": 98,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 4610,
+              "api_calls": 2,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_120353_3eaa02",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-t06",
+            "answer_correct": false,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": false,
+            "answer": "FINAL: The final readiness signal is \"ready\" [E1]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 25.0,
+                "end_s": 30.0,
+                "text": "The final readiness signal is ready.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 1 transcript segment(s).",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ],
+            "latency_ms": 42392.68799999991,
+            "tool_calls": [
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 4515,
+              "output_tokens": 116,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 4631,
+              "api_calls": 2,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_120433_cd0f17",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-v01",
+            "answer_correct": true,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": true,
+            "answer": "FINAL: Blue [E6]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E2",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E3",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E4",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E5",
+                "kind": "transcript",
+                "start_s": 50.0,
+                "end_s": 55.0,
+                "text": "Checkpoint E is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E6",
+                "kind": "frame",
+                "start_s": 32.0,
+                "end_s": 32.0,
+                "text": "Visual frame from Self-authored P3 fixture at 32.0s.",
+                "media_paths": [
+                  "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\b5ff5119adc94397b7c0be67cb850e18\\media-cache\\frame-ab907a92c364df610480.jpg"
+                ]
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E1",
+                  "E2",
+                  "E3",
+                  "E4",
+                  "E5"
+                ]
+              },
+              {
+                "tool": "inspect_frame",
+                "summary": "Inspected frame at 32.0s.",
+                "evidence_ids": [
+                  "E6"
+                ]
+              }
+            ],
+            "latency_ms": 235696.8166000006,
+            "tool_calls": [
+              "search_transcript",
+              "inspect_frame"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 20923,
+              "output_tokens": 466,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 21389,
+              "api_calls": 8,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_120902_e57c4c",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-v02",
+            "answer_correct": true,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": true,
+            "answer": "FINAL: 7 [E6]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E2",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E3",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E4",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E5",
+                "kind": "transcript",
+                "start_s": 50.0,
+                "end_s": 55.0,
+                "text": "Checkpoint E is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E6",
+                "kind": "frame",
+                "start_s": 37.0,
+                "end_s": 37.0,
+                "text": "Visual frame from Self-authored P3 fixture at 37.0s.",
+                "media_paths": [
+                  "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\9a85ad42ba3e4a3b98a16ab136fadba4\\media-cache\\frame-b3d3a8a7b03bb5cb302b.jpg"
+                ]
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E1",
+                  "E2",
+                  "E3",
+                  "E4",
+                  "E5"
+                ]
+              },
+              {
+                "tool": "inspect_frame",
+                "summary": "Inspected frame at 37.0s.",
+                "evidence_ids": [
+                  "E6"
+                ]
+              }
+            ],
+            "latency_ms": 111380.76829999773,
+            "tool_calls": [
+              "search_transcript",
+              "inspect_frame"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 17302,
+              "output_tokens": 489,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 17791,
+              "api_calls": 7,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_121300_11a521",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-v03",
+            "answer_correct": true,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": true,
+            "answer": "FINAL: SQUARE [E6]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E2",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E3",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E4",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E5",
+                "kind": "transcript",
+                "start_s": 50.0,
+                "end_s": 55.0,
+                "text": "Checkpoint E is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E6",
+                "kind": "frame",
+                "start_s": 42.0,
+                "end_s": 42.0,
+                "text": "Visual frame from Self-authored P3 fixture at 42.0s.",
+                "media_paths": [
+                  "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\062ddb4cb2ab454299cabbcef60225f4\\media-cache\\frame-03457bc89a22ff38cc85.jpg"
+                ]
+              }
+            ],
+            "activity": [
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E1",
+                  "E2",
+                  "E3",
+                  "E4",
+                  "E5"
+                ]
+              },
+              {
+                "tool": "inspect_frame",
+                "summary": "Inspected frame at 42.0s.",
+                "evidence_ids": [
+                  "E6"
+                ]
+              }
+            ],
+            "latency_ms": 110547.47310000675,
+            "tool_calls": [
+              "search_transcript",
+              "inspect_frame"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 20233,
+              "output_tokens": 486,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 20719,
+              "api_calls": 8,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_121930_c2aea6",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-v04",
+            "answer_correct": true,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": true,
+            "answer": "FINAL: to the right [E1]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "clip",
+                "start_s": 47.0,
+                "end_s": 52.0,
+                "text": "Sampled 3 frame(s) from 47.0-52.0s. Overlapping transcript: Checkpoint D is visible now. Checkpoint E is visible now.",
+                "media_paths": [
+                  "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\8ac8ba0c8b154b19a980866898c159d7\\media-cache\\clip-eabbe7b2c4ca26420e38-0.jpg",
+                  "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\8ac8ba0c8b154b19a980866898c159d7\\media-cache\\clip-eabbe7b2c4ca26420e38-1.jpg",
+                  "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\8ac8ba0c8b154b19a980866898c159d7\\media-cache\\clip-eabbe7b2c4ca26420e38-2.jpg"
+                ]
+              }
+            ],
+            "activity": [
+              {
+                "tool": "inspect_clip",
+                "summary": "Inspected clip 47.0-52.0s using 3 sampled frames.",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ],
+            "latency_ms": 114656.66990000318,
+            "tool_calls": [
+              "inspect_clip"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 13113,
+              "output_tokens": 344,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 13457,
+              "api_calls": 5,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_122121_258b84",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-v05",
+            "answer_correct": false,
+            "citation_valid": false,
+            "modality_correct": false,
+            "evidence_window_correct": false,
+            "passed": false,
+            "answer": "Insufficient evidence to determine the answer from this lecture.",
+            "status": "insufficient_evidence",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "frame",
+                "start_s": 52.0,
+                "end_s": 52.0,
+                "text": "Visual frame from Self-authored P3 fixture at 52.0s.",
+                "media_paths": [
+                  "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\1b8da8831c714228b9fc92212ad870ed\\media-cache\\frame-0ec9d2f6bda2f894490e.jpg"
+                ]
+              },
+              {
+                "evidence_id": "E2",
+                "kind": "transcript",
+                "start_s": 50.0,
+                "end_s": 55.0,
+                "text": "Checkpoint E is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E3",
+                "kind": "transcript",
+                "start_s": 30.0,
+                "end_s": 35.0,
+                "text": "Checkpoint A is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E4",
+                "kind": "transcript",
+                "start_s": 35.0,
+                "end_s": 40.0,
+                "text": "Checkpoint B is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E5",
+                "kind": "transcript",
+                "start_s": 40.0,
+                "end_s": 45.0,
+                "text": "Checkpoint C is visible now.",
+                "media_paths": []
+              },
+              {
+                "evidence_id": "E6",
+                "kind": "transcript",
+                "start_s": 45.0,
+                "end_s": 50.0,
+                "text": "Checkpoint D is visible now.",
+                "media_paths": []
+              }
+            ],
+            "activity": [
+              {
+                "tool": "inspect_frame",
+                "summary": "Inspected frame at 52.0s.",
+                "evidence_ids": [
+                  "E1"
+                ]
+              },
+              {
+                "tool": "search_transcript",
+                "summary": "Found 5 transcript segment(s).",
+                "evidence_ids": [
+                  "E2",
+                  "E3",
+                  "E4",
+                  "E5",
+                  "E6"
+                ]
+              }
+            ],
+            "latency_ms": 315325.71189999726,
+            "tool_calls": [
+              "inspect_frame",
+              "search_transcript"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 47751,
+              "output_tokens": 1411,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 49162,
+              "api_calls": 17,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_123029_9727e7",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          },
+          {
+            "case_id": "p3-v06",
+            "answer_correct": false,
+            "citation_valid": true,
+            "modality_correct": true,
+            "evidence_window_correct": true,
+            "passed": false,
+            "answer": "FINAL: Full-screen green background [E1]",
+            "status": "answered",
+            "evidence": [
+              {
+                "evidence_id": "E1",
+                "kind": "frame",
+                "start_s": 57.0,
+                "end_s": 57.0,
+                "text": "Visual frame from Self-authored P3 fixture at 57.0s.",
+                "media_paths": [
+                  "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\69acbc9bb0924efa8d2466358e6732ab\\media-cache\\frame-46473ab725c1932e0526.jpg"
+                ]
+              }
+            ],
+            "activity": [
+              {
+                "tool": "inspect_frame",
+                "summary": "Inspected frame at 57.0s.",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ],
+            "latency_ms": 101734.9275000015,
+            "tool_calls": [
+              "inspect_frame"
+            ],
+            "usage": {
+              "estimated_cost_usd": 0.0,
+              "cost_status": "unknown",
+              "cost_source": "none",
+              "input_tokens": 15139,
+              "output_tokens": 401,
+              "cache_read_tokens": 0,
+              "cache_write_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 15540,
+              "api_calls": 6,
+              "model": "qwen3.5-hermes:4b",
+              "provider": "custom",
+              "session_id": "20260830_123543_d3372c",
+              "completed": true,
+              "failed": false,
+              "service_tier": null
+            }
+          }
+        ],
+        "hermes_process_invocations": 12
+      },
+      "predictions": [
+        {
+          "case_id": "p3-t01",
+          "answer": "FINAL: The project codename is Orion [E1]",
+          "final_product_answer": "FINAL: The project codename is Orion [E1]",
+          "raw_model_answer": "FINAL: The project codename is Orion [E1]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 0.0,
+              "end_s": 5.0,
+              "text": "The project codename is Orion.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 1 transcript segment(s).",
+              "evidence_ids": [
+                "E1"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 4513,
+            "output_tokens": 88,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 4601,
+            "api_calls": 2,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_115628_e0bca1",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 56123.75790000078
+        },
+        {
+          "case_id": "p3-t02",
+          "answer": "FINAL: Collect, compare, decide [E1]",
+          "final_product_answer": "FINAL: Collect, compare, decide [E1]",
+          "raw_model_answer": "FINAL: Collect, compare, decide [E1]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 5.0,
+              "end_s": 10.0,
+              "text": "The three workflow stages are collect, compare, decide.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 1 transcript segment(s).",
+              "evidence_ids": [
+                "E1"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 4517,
+            "output_tokens": 115,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 4632,
+            "api_calls": 2,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_115724_f588ff",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 42587.87890000531
+        },
+        {
+          "case_id": "p3-t03",
+          "answer": "FINAL: < The checkpoint interval is five minutes > [E1]",
+          "final_product_answer": "FINAL: < The checkpoint interval is five minutes > [E1]",
+          "raw_model_answer": "FINAL: < The checkpoint interval is five minutes > [E1]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 10.0,
+              "end_s": 15.0,
+              "text": "The checkpoint interval is five minutes.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E2",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E3",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E4",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E5",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "E5"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 6992,
+            "output_tokens": 129,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 7121,
+            "api_calls": 3,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_120001_36de0d",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 50945.03750000149
+        },
+        {
+          "case_id": "p3-t04",
+          "answer": "FINAL: Atlas [E1]",
+          "final_product_answer": "FINAL: Atlas [E1]",
+          "raw_model_answer": "FINAL: Atlas [E1]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 15.0,
+              "end_s": 20.0,
+              "text": "The owning team is Atlas.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 1 transcript segment(s).",
+              "evidence_ids": [
+                "E1"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 6811,
+            "output_tokens": 186,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 6997,
+            "api_calls": 3,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_120052_822c05",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 56766.87369999854
+        },
+        {
+          "case_id": "p3-t05",
+          "answer": "Insufficient evidence to determine the answer from this lecture.",
+          "final_product_answer": "Insufficient evidence to determine the answer from this lecture.",
+          "raw_model_answer": "FINAL: The retry limit is two attempts [E1].",
+          "rejection_reason": "invalid_final_format",
+          "status": "insufficient_evidence",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 20.0,
+              "end_s": 25.0,
+              "text": "The retry limit is two attempts.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 1 transcript segment(s).",
+              "evidence_ids": [
+                "E1"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 4512,
+            "output_tokens": 98,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 4610,
+            "api_calls": 2,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_120353_3eaa02",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 40167.4925000043
+        },
+        {
+          "case_id": "p3-t06",
+          "answer": "FINAL: The final readiness signal is \"ready\" [E1]",
+          "final_product_answer": "FINAL: The final readiness signal is \"ready\" [E1]",
+          "raw_model_answer": "FINAL: The final readiness signal is \"ready\" [E1]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 25.0,
+              "end_s": 30.0,
+              "text": "The final readiness signal is ready.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 1 transcript segment(s).",
+              "evidence_ids": [
+                "E1"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 4515,
+            "output_tokens": 116,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 4631,
+            "api_calls": 2,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_120433_cd0f17",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 42392.68799999991
+        },
+        {
+          "case_id": "p3-v01",
+          "answer": "FINAL: Blue [E6]",
+          "final_product_answer": "FINAL: Blue [E6]",
+          "raw_model_answer": "FINAL: Blue [E6]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E2",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E3",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E4",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E5",
+              "kind": "transcript",
+              "start_s": 50.0,
+              "end_s": 55.0,
+              "text": "Checkpoint E is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E6",
+              "kind": "frame",
+              "start_s": 32.0,
+              "end_s": 32.0,
+              "text": "Visual frame from Self-authored P3 fixture at 32.0s.",
+              "media_paths": [
+                "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\b5ff5119adc94397b7c0be67cb850e18\\media-cache\\frame-ab907a92c364df610480.jpg"
+              ]
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "E5"
+              ]
+            },
+            {
+              "tool": "inspect_frame",
+              "summary": "Inspected frame at 32.0s.",
+              "evidence_ids": [
+                "E6"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript",
+            "inspect_frame"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 20923,
+            "output_tokens": 466,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 21389,
+            "api_calls": 8,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_120902_e57c4c",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 235696.8166000006
+        },
+        {
+          "case_id": "p3-v02",
+          "answer": "FINAL: 7 [E6]",
+          "final_product_answer": "FINAL: 7 [E6]",
+          "raw_model_answer": "FINAL: 7 [E6]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E2",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E3",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E4",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E5",
+              "kind": "transcript",
+              "start_s": 50.0,
+              "end_s": 55.0,
+              "text": "Checkpoint E is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E6",
+              "kind": "frame",
+              "start_s": 37.0,
+              "end_s": 37.0,
+              "text": "Visual frame from Self-authored P3 fixture at 37.0s.",
+              "media_paths": [
+                "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\9a85ad42ba3e4a3b98a16ab136fadba4\\media-cache\\frame-b3d3a8a7b03bb5cb302b.jpg"
+              ]
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "E5"
+              ]
+            },
+            {
+              "tool": "inspect_frame",
+              "summary": "Inspected frame at 37.0s.",
+              "evidence_ids": [
+                "E6"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript",
+            "inspect_frame"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 17302,
+            "output_tokens": 489,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 17791,
+            "api_calls": 7,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_121300_11a521",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 111380.76829999773
+        },
+        {
+          "case_id": "p3-v03",
+          "answer": "FINAL: SQUARE [E6]",
+          "final_product_answer": "FINAL: SQUARE [E6]",
+          "raw_model_answer": "FINAL: SQUARE [E6]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E2",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E3",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E4",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E5",
+              "kind": "transcript",
+              "start_s": 50.0,
+              "end_s": 55.0,
+              "text": "Checkpoint E is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E6",
+              "kind": "frame",
+              "start_s": 42.0,
+              "end_s": 42.0,
+              "text": "Visual frame from Self-authored P3 fixture at 42.0s.",
+              "media_paths": [
+                "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\062ddb4cb2ab454299cabbcef60225f4\\media-cache\\frame-03457bc89a22ff38cc85.jpg"
+              ]
+            }
+          ],
+          "activity": [
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "E5"
+              ]
+            },
+            {
+              "tool": "inspect_frame",
+              "summary": "Inspected frame at 42.0s.",
+              "evidence_ids": [
+                "E6"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "search_transcript",
+            "inspect_frame"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 20233,
+            "output_tokens": 486,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 20719,
+            "api_calls": 8,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_121930_c2aea6",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 110547.47310000675
+        },
+        {
+          "case_id": "p3-v04",
+          "answer": "FINAL: to the right [E1]",
+          "final_product_answer": "FINAL: to the right [E1]",
+          "raw_model_answer": "FINAL: to the right [E1]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "clip",
+              "start_s": 47.0,
+              "end_s": 52.0,
+              "text": "Sampled 3 frame(s) from 47.0-52.0s. Overlapping transcript: Checkpoint D is visible now. Checkpoint E is visible now.",
+              "media_paths": [
+                "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\8ac8ba0c8b154b19a980866898c159d7\\media-cache\\clip-eabbe7b2c4ca26420e38-0.jpg",
+                "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\8ac8ba0c8b154b19a980866898c159d7\\media-cache\\clip-eabbe7b2c4ca26420e38-1.jpg",
+                "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\8ac8ba0c8b154b19a980866898c159d7\\media-cache\\clip-eabbe7b2c4ca26420e38-2.jpg"
+              ]
+            }
+          ],
+          "activity": [
+            {
+              "tool": "inspect_clip",
+              "summary": "Inspected clip 47.0-52.0s using 3 sampled frames.",
+              "evidence_ids": [
+                "E1"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "inspect_clip"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 13113,
+            "output_tokens": 344,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 13457,
+            "api_calls": 5,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_122121_258b84",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 114656.66990000318
+        },
+        {
+          "case_id": "p3-v05",
+          "answer": "Insufficient evidence to determine the answer from this lecture.",
+          "final_product_answer": "Insufficient evidence to determine the answer from this lecture.",
+          "raw_model_answer": "FINAL: GO [E1, E2]",
+          "rejection_reason": "invalid_final_format",
+          "status": "insufficient_evidence",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "frame",
+              "start_s": 52.0,
+              "end_s": 52.0,
+              "text": "Visual frame from Self-authored P3 fixture at 52.0s.",
+              "media_paths": [
+                "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\1b8da8831c714228b9fc92212ad870ed\\media-cache\\frame-0ec9d2f6bda2f894490e.jpg"
+              ]
+            },
+            {
+              "evidence_id": "E2",
+              "kind": "transcript",
+              "start_s": 50.0,
+              "end_s": 55.0,
+              "text": "Checkpoint E is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E3",
+              "kind": "transcript",
+              "start_s": 30.0,
+              "end_s": 35.0,
+              "text": "Checkpoint A is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E4",
+              "kind": "transcript",
+              "start_s": 35.0,
+              "end_s": 40.0,
+              "text": "Checkpoint B is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E5",
+              "kind": "transcript",
+              "start_s": 40.0,
+              "end_s": 45.0,
+              "text": "Checkpoint C is visible now.",
+              "media_paths": []
+            },
+            {
+              "evidence_id": "E6",
+              "kind": "transcript",
+              "start_s": 45.0,
+              "end_s": 50.0,
+              "text": "Checkpoint D is visible now.",
+              "media_paths": []
+            }
+          ],
+          "activity": [
+            {
+              "tool": "inspect_frame",
+              "summary": "Inspected frame at 52.0s.",
+              "evidence_ids": [
+                "E1"
+              ]
+            },
+            {
+              "tool": "search_transcript",
+              "summary": "Found 5 transcript segment(s).",
+              "evidence_ids": [
+                "E2",
+                "E3",
+                "E4",
+                "E5",
+                "E6"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "inspect_frame",
+            "search_transcript"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 47751,
+            "output_tokens": 1411,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 49162,
+            "api_calls": 17,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_123029_9727e7",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 315325.71189999726
+        },
+        {
+          "case_id": "p3-v06",
+          "answer": "FINAL: Full-screen green background [E1]",
+          "final_product_answer": "FINAL: Full-screen green background [E1]",
+          "raw_model_answer": "FINAL: Full-screen green background [E1]",
+          "rejection_reason": null,
+          "status": "answered",
+          "evidence": [
+            {
+              "evidence_id": "E1",
+              "kind": "frame",
+              "start_s": 57.0,
+              "end_s": 57.0,
+              "text": "Visual frame from Self-authored P3 fixture at 57.0s.",
+              "media_paths": [
+                "C:\\Personal_Projects\\ai-projects\\hermes-video-tutor\\.run\\paired-sessions\\multimodal\\69acbc9bb0924efa8d2466358e6732ab\\media-cache\\frame-46473ab725c1932e0526.jpg"
+              ]
+            }
+          ],
+          "activity": [
+            {
+              "tool": "inspect_frame",
+              "summary": "Inspected frame at 57.0s.",
+              "evidence_ids": [
+                "E1"
+              ]
+            }
+          ],
+          "tool_calls": [
+            "inspect_frame"
+          ],
+          "usage": {
+            "estimated_cost_usd": 0.0,
+            "cost_status": "unknown",
+            "cost_source": "none",
+            "input_tokens": 15139,
+            "output_tokens": 401,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "reasoning_tokens": 0,
+            "total_tokens": 15540,
+            "api_calls": 6,
+            "model": "qwen3.5-hermes:4b",
+            "provider": "custom",
+            "session_id": "20260830_123543_d3372c",
+            "completed": true,
+            "failed": false,
+            "service_tier": null
+          },
+          "latency_ms": 101734.9275000015
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "cases_sha256": "8a67946bf34ff93d52255fde38dc66a8f4e3ad187924011dea0cb2091ec314c7",
+    "gold_sha256": "f01a3bb27463121099c2dacd47a8252211e5a2382d7468a8f1a0f2e0ec09d7ac",
+    "fixture": {
+      "license": "CC0-1.0",
+      "source": "self-authored geometric/text instructions; no external media",
+      "generator": "scripts\\generate_fixture.py",
+      "generator_sha256": "b7dd8b159b00ff212a93e25da53f5cd0e7520b1d3d612ef75aad0482721aa940",
+      "ffmpeg_version": "ffmpeg version 9.0-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+      "font": "C:\\Windows\\Fonts\\arial.ttf",
+      "font_sha256": "b3658eadae55e682b5f69eb64c439c1ecc8f196c0bb8d4756d145d13bc86476a",
+      "asset_sha256": {
+        "course.json": "4fe054828363d4aaa266eedebb2741ac4f1c39dc9cfe3f69a4095b14abf7e5c9",
+        "transcript.json": "bee35806cc823bf34e4f1cd730a05317b49cee531b1f396fa8ae5b0d718a4942",
+        "media/lecture.mp4": "dbb606211decf4ddb5390f97d54687461f5686784442086b52d4806c2d1e99c9"
+      },
+      "duration_s": 60,
+      "provenance_sha256": "d572087e4c39d2b24c53f65848e0b53c4d0fcd78c5d7cdcbcdacab1a0c5d1b9f",
+      "measured_duration_s": 60.0
+    },
+    "model": {
+      "tag": "qwen3.5-hermes:4b",
+      "digest": "23a241b1769b7ea48a2611c8944a7afc91eb71446e8a5de7178df934a9d0e633",
+      "base_tag": "qwen3.5:4b",
+      "base_digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "size_bytes": 3389983489,
+      "details": {
+        "parent_model": "qwen3.5:4b",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "4.7B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 262144,
+        "embedding_length": 2560
+      },
+      "capabilities": [
+        "vision",
+        "completion",
+        "tools",
+        "thinking"
+      ],
+      "parameters": {
+        "num_ctx": "65536",
+        "presence_penalty": "1.5",
+        "temperature": "0",
+        "top_k": "20",
+        "top_p": "0.95"
+      }
+    },
+    "hermes": {
+      "release": "v0.20.4",
+      "revision": "8911e2e0edf750b104edbdc106d63d6cdac88524",
+      "sparse_checkout": [
+        "/*",
+        "!/contributors/"
+      ],
+      "executable_sha256": "d9ae5804201825ecff8ff76d9c2451a5435e3f714dbddc30ede8e42d008cdc54",
+      "config_sha256": "b214935688cee8bef4a4d72a5f05393d5bb6a6ba66c00d0e2b8f464312bf689c"
+    },
+    "tool_surfaces": {
+      "transcript_only": [
+        "expand_context",
+        "search_transcript"
+      ],
+      "multimodal": [
+        "expand_context",
+        "inspect_clip",
+        "inspect_frame",
+        "search_transcript"
+      ]
+    },
+    "implementation_sha256": {
+      "src/video_tutor/__init__.py": "604cb4fe7d2fd14e21db3b8d90a4f2d6437a355a9e9dd4bb01c3d75e25eb32b7",
+      "src/video_tutor/activity.py": "ef8c3524056e9653138016a79640afd9100a5628098b31a7958ecaa2c99165ae",
+      "src/video_tutor/bootstrap.py": "6dad04d406f56a19a009cfbb7fe00ad12752b78cb7f8ab216d89ef2a6eec1a39",
+      "src/video_tutor/cli.py": "09937fb43d7ba99b6c34a0532673f9eb946cfed24d4042c6476465f7e448d528",
+      "src/video_tutor/contracts.py": "dae1a65b6a3d71bec3d688d91827d671497c1b1e25991d592e7b1ca6eb4cfd1d",
+      "src/video_tutor/course.py": "c38181cfa2b709ffec1469996497f6bbfbec2ec3361da3e7bd08d664234cc50c",
+      "src/video_tutor/evidence.py": "e0b3fb22fd9786b83317278dbfb7a94e1c3510e1db05a533a35207614614e091",
+      "src/video_tutor/final_answer.py": "c3a1e17e3a374cb21e03a09aeb3a707131fa334d79dd5b9417ea59d3ad1534e7",
+      "src/video_tutor/hermes_runtime.py": "d1f4c98ba29e28ff82d30d045699b73c88f7c581ba3d06dec9f884469f17b368",
+      "src/video_tutor/media.py": "92a871f2601681bb47a00d624ab7ddcc25eab3235e0e2921adf9105520e62d1d",
+      "src/video_tutor/plugin_bridge.py": "c8f6210543900e7da6c6bca1e73e60576ee77568c73977c656e6e3fd6498b39d",
+      "src/video_tutor/tool_runtime.py": "43702fd1e5ee3a5645959329b6d68e2ae41570d0c239c195f8a9b033e9385910",
+      "src/video_tutor/transcript.py": "82feb7c8797438a629efa90e90a801faf7ba1032404998ba8a3026d34e89a79c",
+      "src/video_tutor/tutor.py": "b93817aa37d96efe4381711fb61bba80b28131fe8bea63af75ed5b747aea8292",
+      ".hermes/plugins/video_tutor/__init__.py": "148857c1e0f4f8bdd1ed451106dcd07a95ce80c7cb357b472acf37b0a47b414d",
+      ".hermes/plugins/video_tutor/plugin.yaml": "0e948ff12cf52cec483695287ecc58c77ef960669e4de9f2e14c0264aacedd53",
+      "evaluation/evaluate.py": "b6e83d43a1ca3e0c5ebd84626f6e81726ab5e0b1099c85b7b2bb9651c8f2c1db",
+      "evaluation/run_live_paired.py": "c9254a54e7c8cdea6032f68c9b453782e71ec77126836c1d5c54fb25257aec14",
+      "scripts/generate_fixture.py": "b7dd8b159b00ff212a93e25da53f5cd0e7520b1d3d612ef75aad0482721aa940",
+      "scripts/setup-hermes.ps1": "5804a19d29306227b33cabc716fa4ddf3c0a02a798dfab548ffcf262d5ebfecf",
+      "config/hermes-project.yaml": "b214935688cee8bef4a4d72a5f05393d5bb6a6ba66c00d0e2b8f464312bf689c",
+      "Modelfile.hermes": "c19eeb7882bf589ab58fada3e9379d0391529514b37c3f16a329cdd7e2a7db1a",
+      "hermes.lock": "939b80cda45f4070fc888c169c7d55b9165c1b4eab305ad45d1630bc3cc87583",
+      "pyproject.toml": "b13173034742c798c9e37d6c07e3725bacf55ffe323ad4f3fdb314de2b526b72",
+      "uv.lock": "4d945ecc5edf85578d21790166d56a72d55f2f6ee7c3760ad576ce77e425a839"
+    },
+    "timeout_s": 600
+  }
+}

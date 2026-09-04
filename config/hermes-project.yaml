@@ -1,0 +1,19 @@
+# Project-scoped Hermes config copied into .run/hermes-home/config.yaml by setup.
+# This avoids mutating the user's global Hermes plugin/tool-search settings.
+model:
+  default: "qwen3.5-hermes:4b"
+  provider: "custom"
+  base_url: "http://localhost:11434/v1"
+  context_length: 65536
+
+auxiliary:
+  title_generation:
+    enabled: false
+
+tools:
+  tool_search:
+    enabled: "off"
+
+plugins:
+  enabled:
+    - video_tutor
