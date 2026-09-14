@@ -1,14 +1,14 @@
 {
   "license": "CC0-1.0",
   "source": "self-authored geometric/text instructions; no external media",
-  "generator": "scripts\\generate_fixture.py",
-  "generator_sha256": "b7dd8b159b00ff212a93e25da53f5cd0e7520b1d3d612ef75aad0482721aa940",
+  "generator": "scripts/generate_fixture.py",
+  "generator_sha256": "1b21e0c7de2231c5a99d8d3f4d2c347a34e404487cd04add90f9c489cf12f080",
   "ffmpeg_version": "ffmpeg version 9.0-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
   "font": "C:\\Windows\\Fonts\\arial.ttf",
   "font_sha256": "b3658eadae55e682b5f69eb64c439c1ecc8f196c0bb8d4756d145d13bc86476a",
   "asset_sha256": {
-    "course.json": "4fe054828363d4aaa266eedebb2741ac4f1c39dc9cfe3f69a4095b14abf7e5c9",
-    "transcript.json": "bee35806cc823bf34e4f1cd730a05317b49cee531b1f396fa8ae5b0d718a4942",
+    "course.json": "54e24c50499493b0fc14b0ee06b1444140fdd351fbe6bc5568bb618eded7c312",
+    "transcript.json": "7ed80ad0b0bdbe604bb22cb7eadd2c1cc298ef3f38e08e47b06ddc9a1065d841",
     "media/lecture.mp4": "dbb606211decf4ddb5390f97d54687461f5686784442086b52d4806c2d1e99c9"
   },
   "duration_s": 60
