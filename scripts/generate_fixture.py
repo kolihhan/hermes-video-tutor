@@ -52,15 +52,15 @@ def generate() -> None:
         {"segment_id": "v04", "start_s": 45, "end_s": 50, "text": "Checkpoint D is visible now."},
         {"segment_id": "v05", "start_s": 50, "end_s": 55, "text": "Checkpoint E is visible now."},
         {"segment_id": "v06", "start_s": 55, "end_s": 60, "text": "Checkpoint F is visible now."},
-    ], indent=2) + "\n", encoding="utf-8")
+    ], indent=2) + "\n", encoding="utf-8", newline="\n")
     course = OUT / "course.json"
     transcript = OUT / "transcript.json"
-    course.write_text(json.dumps({"course_id": "p3-fixture", "title": "Self-authored P3 fixture", "video_path": "media/lecture.mp4", "transcript_path": "transcript.json"}, indent=2) + "\n", encoding="utf-8")
+    course.write_text(json.dumps({"course_id": "p3-fixture", "title": "Self-authored P3 fixture", "video_path": "media/lecture.mp4", "transcript_path": "transcript.json"}, indent=2) + "\n", encoding="utf-8", newline="\n")
     ffmpeg_version = subprocess.run(["ffmpeg", "-version"], capture_output=True, text=True, check=True).stdout.splitlines()[0]
     generator = Path(__file__)
     (OUT / "provenance.json").write_text(json.dumps({
         "license": "CC0-1.0", "source": "self-authored geometric/text instructions; no external media",
-        "generator": str(generator.relative_to(ROOT)), "generator_sha256": _sha256(generator),
+        "generator": generator.relative_to(ROOT).as_posix(), "generator_sha256": _sha256(generator),
         "ffmpeg_version": ffmpeg_version,
         "font": str(font), "font_sha256": _sha256(font),
         "asset_sha256": {
@@ -69,7 +69,7 @@ def generate() -> None:
             "media/lecture.mp4": _sha256(video),
         },
         "duration_s": 60,
-    }, indent=2) + "\n", encoding="utf-8")
+    }, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":
