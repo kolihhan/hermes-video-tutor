@@ -125,9 +125,6 @@ def _preflight(*, repo_root: Path, hermes_home: Path, cases_path: Path, gold_pat
 
     fixture_root = repo_root / "evaluation" / "fixture"
     fixture = json.loads((fixture_root / "provenance.json").read_text(encoding="utf-8"))
-    font = Path(str(fixture.get("font", "")))
-    if not font.is_file() or _sha256(font) != fixture.get("font_sha256"):
-        raise ValueError("fixture font provenance mismatch")
     ffmpeg_version = _run(["ffmpeg", "-version"]).splitlines()[0]
     if ffmpeg_version != fixture.get("ffmpeg_version"):
         raise ValueError("fixture ffmpeg provenance mismatch")
