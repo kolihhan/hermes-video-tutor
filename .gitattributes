@@ -1,0 +1,7 @@
+# Keep frozen evaluation inputs byte-stable across Windows/Linux checkouts.
+scripts/generate_fixture.py text eol=lf
+evaluation/run_live_paired.py text eol=lf
+evaluation/live_inference_cases.json text eol=lf
+evaluation/live_gold_labels.json text eol=lf
+evaluation/fixture/*.json text eol=lf
+evaluation/fixture/media/*.mp4 binary
