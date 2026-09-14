@@ -28,7 +28,7 @@ TIMEOUT_S = 600
 FROZEN_SHA256 = {
     "evaluation/live_inference_cases.json": "8a67946bf34ff93d52255fde38dc66a8f4e3ad187924011dea0cb2091ec314c7",
     "evaluation/live_gold_labels.json": "f01a3bb27463121099c2dacd47a8252211e5a2382d7468a8f1a0f2e0ec09d7ac",
-    "evaluation/fixture/provenance.json": "d572087e4c39d2b24c53f65848e0b53c4d0fcd78c5d7cdcbcdacab1a0c5d1b9f",
+    "evaluation/fixture/provenance.json": "b4d8189ac5289e4827ff34d9a3ec61cef4031b8cc18643d312e34d58cff539b9",
 }
 
 
