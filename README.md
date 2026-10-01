@@ -13,10 +13,10 @@
 </p>
 
 <p align="center">
-  <a href="#try-it">Try it</a> ·
-  <a href="#measured-result">Measured result</a> ·
-  <a href="#how-the-agent-decides">Architecture</a> ·
-  <a href="#why-this-project">Why this project</a>
+  <a href="#demo">Demo</a> ·
+  <a href="#key-result">Key result</a> ·
+  <a href="#how-it-works">Architecture</a> ·
+  <a href="#quickstart">Quickstart</a>
 </p>
 
 ## At a glance
@@ -31,7 +31,7 @@
 > [!NOTE]
 > The interesting part is not “LLM + video.” It is the **modality decision**: when should the agent trust text, and when should it inspect the video?
 
-## Try it
+## Demo
 
 ```cmd
 run-demo.cmd
@@ -53,7 +53,23 @@ A: blue [E2]
 
 A transcript-answerable question can stop after search. There is no fixed `search → frame → clip` pipeline.
 
-## How the agent decides
+## Key result
+
+Frozen paired evaluation on **12 local fixture questions** — 6 transcript-answerable and 6 visual-required — using the same Hermes/model setup:
+
+| Condition | Full pass | Visual-required full pass | Visual tool use on visual questions |
+|---|---:|---:|---:|
+| Transcript only | 16.7% | 0% | 0% |
+| **Multimodal tools enabled** | **50.0%** | **66.7%** | **100%** |
+
+On transcript-answerable cases, multimodal mode made **no unnecessary visual-tool calls** in this frozen run.
+
+Source of truth: [`runs/p3-live-paired-v2/report.json`](runs/p3-live-paired-v2/report.json).
+
+> [!IMPORTANT]
+> This is a small, **self-authored** product-oriented paired evaluation, **not a broad video-QA benchmark claim**.
+
+## How it works
 
 ```mermaid
 flowchart TD
@@ -80,23 +96,11 @@ The project exposes only four domain tools:
 
 Hermes owns the agent loop; this repository supplies the domain tools, evidence contract, product UI, and evaluation harness.
 
-## Measured result
+### Why this project
 
-Frozen paired evaluation on **12 local fixture questions** — 6 transcript-answerable and 6 visual-required — using the same Hermes/model setup:
+Video QA is often presented as “send the video to a multimodal model.” This project asks a narrower systems question: **can a local agent choose the cheapest useful modality while keeping the evidence visible?** The loop starts with transcript search, escalates only when visual evidence is needed, returns evidence IDs with the answer, and allows abstention when evidence is insufficient.
 
-| Condition | Full pass | Visual-required full pass | Visual tool use on visual questions |
-|---|---:|---:|---:|
-| Transcript only | 16.7% | 0% | 0% |
-| **Multimodal tools enabled** | **50.0%** | **66.7%** | **100%** |
-
-On transcript-answerable cases, multimodal mode made **no unnecessary visual-tool calls** in this frozen run.
-
-Source of truth: [`runs/p3-live-paired-v2/report.json`](runs/p3-live-paired-v2/report.json).
-
-> [!IMPORTANT]
-> This is a small, self-authored product-oriented paired evaluation — not a broad video-QA benchmark claim.
-
-## What the UI exposes
+## What the UI shows
 
 - lecture video + user question
 - final answer with evidence IDs
@@ -106,19 +110,6 @@ Source of truth: [`runs/p3-live-paired-v2/report.json`](runs/p3-live-paired-v2/r
 - failure / abstention behavior when evidence is insufficient
 
 The UI exposes tool activity and evidence without exposing hidden chain-of-thought.
-
-## Why this project
-
-Video QA is often presented as “send the video to a multimodal model.” This project focuses on a narrower systems question:
-
-> **Can a local agent choose the cheapest useful modality while keeping the evidence visible?**
-
-That produces a practical control loop:
-
-1. search the transcript first when text may be sufficient;
-2. escalate to frame or short-clip inspection when the question requires visual evidence;
-3. return evidence IDs with the answer;
-4. allow abstention when the available evidence is not strong enough.
 
 ## Quickstart
 
@@ -142,7 +133,7 @@ video-tutor ask "What are the three stages of the tutor pipeline?"
 .run\app-venv\Scripts\video-tutor.exe inspect --question "What color is the highlighted component around 4 seconds?"
 ```
 
-## Engineering decisions
+## Engineering choices
 
 - **Adaptive modality** instead of sending every question through visual inspection.
 - **Small tool surface**: four domain tools cover the useful behavior without extra orchestration layers.
