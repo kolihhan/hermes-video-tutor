@@ -12,8 +12,24 @@
   <img src="https://img.shields.io/badge/Evidence_Grounded-111827?style=flat-square" alt="Evidence grounded" />
 </p>
 
+<p align="center">
+  <a href="#demo">Demo</a> ·
+  <a href="#key-result">Key result</a> ·
+  <a href="#how-it-works">Architecture</a> ·
+  <a href="#quickstart">Quickstart</a>
+</p>
+
+## At a glance
+
+| | |
+|---|---|
+| **Problem** | Transcript-only QA fails when the answer is visible in a frame or clip rather than spoken. Sending every question to a vision model is wasteful. |
+| **What I built** | A local agent with four video tools that can stop after transcript search or escalate to frame / clip inspection only when needed. |
+| **Evidence** | On a frozen 12-question fixture, multimodal mode reached **66.7% full pass on visual-required questions** and used a visual tool on **100% of those questions**. |
+| **Design focus** | Adaptive modality, visible tool activity, and evidence-grounded answers. |
+
 > [!NOTE]
-> The interesting part is the **modality decision**: the agent can stop after transcript search, or escalate to frame / clip inspection when the question requires visual evidence.
+> The interesting part is not “LLM + video.” It is the **modality decision**: when should the agent trust text, and when should it inspect the video?
 
 ## Demo
 
@@ -21,7 +37,9 @@
 run-demo.cmd
 ```
 
-The Streamlit UI puts the lecture, question, answer, **Agent Activity**, and **Evidence** on one screen.
+The Streamlit UI keeps the lecture, question, answer, **Agent Activity**, and **Evidence** together on one screen.
+
+A typical visual-required question looks like this:
 
 ```text
 Q: What color is the highlighted component around 4 seconds?
@@ -33,7 +51,7 @@ Hermes
 A: blue [E2]
 ```
 
-A transcript-answerable question may stop after search. There is no fixed `search → frame → clip` pipeline.
+A transcript-answerable question can stop after search. There is no fixed `search → frame → clip` pipeline.
 
 ## Key result
 
@@ -44,12 +62,12 @@ Frozen paired evaluation on **12 local fixture questions** — 6 transcript-answ
 | Transcript only | 16.7% | 0% | 0% |
 | **Multimodal tools enabled** | **50.0%** | **66.7%** | **100%** |
 
-On the transcript-answerable cases, multimodal mode made **no unnecessary visual-tool calls** in this frozen run.
+On transcript-answerable cases, multimodal mode made **no unnecessary visual-tool calls** in this frozen run.
 
 Source of truth: [`runs/p3-live-paired-v2/report.json`](runs/p3-live-paired-v2/report.json).
 
 > [!IMPORTANT]
-> This is a small product-oriented paired evaluation, **not a broad video-QA benchmark claim**.
+> This is a small, **self-authored** product-oriented paired evaluation, **not a broad video-QA benchmark claim**.
 
 ## How it works
 
@@ -67,22 +85,29 @@ flowchart TD
     H --> A[Grounded answer + evidence]
 ```
 
-The project exposes four domain tools:
+The project exposes only four domain tools:
 
-- `search_transcript(query, top_k=5)`
-- `expand_context(segment_id)`
-- `inspect_frame(timestamp_s)`
-- `inspect_clip(start_s, end_s)`
+| Tool | Purpose |
+|---|---|
+| `search_transcript(query, top_k=5)` | Find spoken evidence relevant to the question. |
+| `expand_context(segment_id)` | Pull nearby transcript context around a hit. |
+| `inspect_frame(timestamp_s)` | Inspect a single visual moment. |
+| `inspect_clip(start_s, end_s)` | Inspect a short range when one frame is insufficient. |
 
-Hermes owns the agent loop; the project supplies the tools and evidence contract.
+Hermes owns the agent loop; this repository supplies the domain tools, evidence contract, product UI, and evaluation harness.
+
+### Why this project
+
+Video QA is often presented as “send the video to a multimodal model.” This project asks a narrower systems question: **can a local agent choose the cheapest useful modality while keeping the evidence visible?** The loop starts with transcript search, escalates only when visual evidence is needed, returns evidence IDs with the answer, and allows abstention when evidence is insufficient.
 
 ## What the UI shows
 
 - lecture video + user question
 - final answer with evidence IDs
-- which tools the agent called
+- which domain tools the agent called
 - short activity summaries
 - transcript or visual evidence used for the answer
+- failure / abstention behavior when evidence is insufficient
 
 The UI exposes tool activity and evidence without exposing hidden chain-of-thought.
 
@@ -111,10 +136,10 @@ video-tutor ask "What are the three stages of the tutor pipeline?"
 ## Engineering choices
 
 - **Adaptive modality** instead of sending every question through visual inspection.
-- **Small tool surface**: four tools cover the useful behavior without extra orchestration layers.
+- **Small tool surface**: four domain tools cover the useful behavior without extra orchestration layers.
 - **Bounded clip inspection** using sampled frames from a short range.
-- **Evidence-first output** so visual tools return model-usable evidence, not just file paths.
-- **Abstention allowed** when the available evidence is insufficient.
+- **Evidence-first tool outputs** so visual inspection returns model-usable evidence, not only file paths.
+- **Abstention allowed** when evidence is insufficient.
 - **One `TutorService`** behind Streamlit and CLI.
 - **Evaluation labels kept out of runtime inputs**.
 
@@ -122,7 +147,7 @@ video-tutor ask "What are the three stages of the tutor pipeline?"
 
 The historical v1 scorer compared the complete cited response against a short-answer label, so it is not used as a performance claim. V2 separates short-answer correctness from citation validity, modality choice, and evidence-window correctness.
 
-The frozen report also records tool calls, latency, evidence, failure/abstention state, and per-case activity.
+The frozen report also records tool calls, latency, evidence, failure / abstention state, and per-case activity.
 
 ## Limitations
 
