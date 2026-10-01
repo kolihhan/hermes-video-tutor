@@ -35,7 +35,7 @@ A: blue [E2]
 
 A transcript-answerable question may stop after search. There is no fixed `search → frame → clip` pipeline.
 
-## Measured result
+## Key result
 
 Frozen paired evaluation on **12 local fixture questions** — 6 transcript-answerable and 6 visual-required — using the same Hermes/model setup:
 
@@ -49,7 +49,7 @@ On the transcript-answerable cases, multimodal mode made **no unnecessary visual
 Source of truth: [`runs/p3-live-paired-v2/report.json`](runs/p3-live-paired-v2/report.json).
 
 > [!IMPORTANT]
-> This is a small product-oriented paired evaluation, not a broad video-QA benchmark claim.
+> This is a small product-oriented paired evaluation, **not a broad video-QA benchmark claim**.
 
 ## How it works
 
@@ -76,15 +76,15 @@ The project exposes four domain tools:
 
 Hermes owns the agent loop; the project supplies the tools and evidence contract.
 
-## Engineering choices
+## What the UI shows
 
-- **Adaptive modality** instead of sending every question through visual inspection.
-- **Small tool surface**: four tools cover the useful behavior without extra orchestration layers.
-- **Bounded clip inspection** using sampled frames from a short range.
-- **Evidence-first output** so visual tools return model-usable evidence, not just file paths.
-- **Abstention allowed** when the available evidence is insufficient.
-- **One `TutorService`** behind Streamlit and CLI.
-- **Evaluation labels kept out of runtime inputs**.
+- lecture video + user question
+- final answer with evidence IDs
+- which tools the agent called
+- short activity summaries
+- transcript or visual evidence used for the answer
+
+The UI exposes tool activity and evidence without exposing hidden chain-of-thought.
 
 ## Quickstart
 
@@ -108,15 +108,25 @@ video-tutor ask "What are the three stages of the tutor pipeline?"
 .run\app-venv\Scripts\video-tutor.exe inspect --question "What color is the highlighted component around 4 seconds?"
 ```
 
-## Evaluation note
+## Engineering choices
+
+- **Adaptive modality** instead of sending every question through visual inspection.
+- **Small tool surface**: four tools cover the useful behavior without extra orchestration layers.
+- **Bounded clip inspection** using sampled frames from a short range.
+- **Evidence-first output** so visual tools return model-usable evidence, not just file paths.
+- **Abstention allowed** when the available evidence is insufficient.
+- **One `TutorService`** behind Streamlit and CLI.
+- **Evaluation labels kept out of runtime inputs**.
+
+## Evaluation notes
 
 The historical v1 scorer compared the complete cited response against a short-answer label, so it is not used as a performance claim. V2 separates short-answer correctness from citation validity, modality choice, and evidence-window correctness.
 
 The frozen report also records tool calls, latency, evidence, failure/abstention state, and per-case activity.
 
-## Limits
+## Limitations
 
-- The 12-question fixture is self-authored and intentionally small.
+- The 12-question fixture is **self-authored** and intentionally small.
 - Clip inspection uses sampled frames rather than native long-video input.
 - Results depend on the frozen local-model configuration.
 - The demo targets lecture-style video rather than arbitrary long-form media.
