@@ -1,8 +1,6 @@
 # Hermes Video Tutor
 
-A video QA agent built on Hermes.
-
-It can search a lecture transcript, expand nearby context, or look at a frame or short clip when the answer depends on something visual. The model decides which tool to use based on the question.
+A local video QA agent built on Hermes. It can search a lecture transcript, expand nearby context, or inspect a frame or short clip when the answer depends on visual evidence.
 
 ## How it works
 
@@ -19,14 +17,47 @@ Hermes agent
  answer + source evidence
 ```
 
-There are four project tools:
+The project exposes four tools:
 
 - `search_transcript(query, top_k=5)`
 - `expand_context(segment_id)`
 - `inspect_frame(timestamp_s)`
 - `inspect_clip(start_s, end_s)`
 
-The frame and clip tools return image content to the model, not just a file path. There is no fixed `search -> frame -> clip` sequence; Hermes chooses the next step after each result.
+There is no fixed `search -> frame -> clip` sequence. Hermes decides which tool to call next from the question and previous tool output.
+
+The UI shows tool activity and evidence summaries without exposing hidden chain-of-thought.
+
+## Evaluation
+
+The current frozen v2 evaluation is **complete**.
+
+It uses a small paired local fixture with **12 questions**:
+
+- 6 transcript-answerable cases
+- 6 visual-required cases
+
+Each question is evaluated under two conditions using the same Hermes/model setup:
+
+1. **transcript-only** — visual tools are unavailable
+2. **multimodal** — frame and clip tools are available
+
+The evaluator keeps these checks separate:
+
+- answer correctness
+- citation validity
+- modality choice
+- evidence-window correctness
+
+The v2 run also records tool calls, latency, evidence, failure/abstention state, and per-case activity. The frozen report's project-level verdict is **`KEEP HERMES`**.
+
+Source of truth: [`runs/p3-live-paired-v2/report.json`](runs/p3-live-paired-v2/report.json).
+
+### Why v2 matters
+
+The historical v1 evaluation is intentionally not used as a performance claim because its scorer compared the full cited response against a short-answer label. That scoring contract did not match the output format.
+
+V2 fixes the evaluation contract by separating the short final answer from citation/evidence checks. The README now points to that completed run instead of saying the rerun is still pending.
 
 ## Example
 
@@ -38,7 +69,7 @@ Q: What are the three stages of the tutor pipeline?
 A: retrieve evidence, reason over it, and answer [E1]
 ```
 
-A visual question can cause the agent to look at the video:
+A visual question can cause the agent to inspect video evidence:
 
 ```text
 Q: What color is the highlighted component around 4 seconds?
@@ -47,11 +78,9 @@ Q: What color is the highlighted component around 4 seconds?
 A: blue [E2]
 ```
 
-The UI shows tool activity and evidence. It does not expose hidden chain-of-thought.
-
 ## Run locally
 
-On Windows, the easiest path is:
+On Windows:
 
 ```cmd
 run-demo.cmd
@@ -65,37 +94,28 @@ CLI:
 video-tutor ask "What are the three stages of the tutor pipeline?"
 ```
 
-To see tool activity and evidence summaries:
+To inspect tool activity and evidence summaries:
 
 ```powershell
 .run\app-venv\Scripts\video-tutor.exe inspect --question "What color is the highlighted component around 4 seconds?"
 ```
 
-The Streamlit UI and CLI both use the same `TutorService`.
+The Streamlit UI and CLI use the same `TutorService`.
 
-## Evaluation
+## Implementation choices
 
-I use a small 12-question local fixture: six questions can be answered from the transcript and six need visual evidence. The transcript-only and multimodal runs use the same Hermes/model setup; the difference is whether frame and clip tools are available.
-
-The first live run is kept in the repo, but I do **not** use its `0/12` score as a performance result. The evaluator compared the full cited response against a short-answer label, so the scoring contract was wrong for the format the agent produced.
-
-Review-v2 changes the answer format to a short final answer plus citation and keeps answer correctness, citation, modality, and evidence timing as separate checks. That rerun is still pending, so there is no v2 performance claim yet.
-
-The historical run and the reason it was rejected are documented in `docs/p3-decision.md`.
-
-## A few implementation choices
-
-- Hermes owns the agent loop; this repo only provides the project tools.
-- The tool list stays small, so all four tools are exposed directly.
-- Clip inspection samples a few frames from a short time range instead of sending arbitrary-length video.
-- Reference answers and evaluator labels are kept out of the runtime inputs.
-- If the agent does not have enough evidence, it can return an insufficient-evidence answer instead of guessing.
+- Hermes owns the agent loop; the project supplies the domain tools.
+- The tool list stays intentionally small.
+- Frame/clip tools return visual content to the model, not only file paths.
+- Clip inspection samples frames from a short range rather than sending arbitrary-length video.
+- Reference answers and evaluator labels are kept out of runtime inputs.
+- The agent can abstain when evidence is insufficient.
 
 ## Limits
 
-- The 12-question fixture is self-authored and too small for general video-QA claims.
+- The 12-question fixture is self-authored and too small for broad video-QA claims.
 - Clip inspection uses sampled frames rather than native long-video input.
-- Results depend heavily on the local model; the default is `qwen3.5:4b`.
+- Results depend on the frozen local-model configuration.
 
 More detail is in `docs/architecture.md`, `docs/hermes-integration.md`, and `docs/windows.md`.
 
