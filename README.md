@@ -1,92 +1,89 @@
 # Hermes Video Tutor
 
-A local video QA agent built on Hermes. It can search a lecture transcript, expand nearby context, or inspect a frame or short clip when the answer depends on visual evidence.
+**A local multimodal video QA agent that decides when a lecture question can be answered from the transcript — and when it needs to inspect the video itself.**
+
+Instead of forcing every question through the same pipeline, Hermes chooses among transcript search, nearby-context expansion, frame inspection, and short-clip inspection, then returns an answer with visible source evidence.
+
+## Demo
+
+```cmd
+run-demo.cmd
+```
+
+The Streamlit demo puts the lecture, question, answer, **Agent Activity**, and **Evidence** on one screen. A visual question can look like this:
+
+```text
+Q: What color is the highlighted component around 4 seconds?
+
+Hermes
+  → search_transcript(...)
+  → inspect_frame(4.0)
+
+A: blue [E2]
+```
+
+A transcript-only question may stop after one search. There is no hard-coded `search → frame → clip` sequence.
+
+## Key result
+
+Frozen paired evaluation on **12 local fixture questions** — 6 transcript-answerable and 6 visual-required — using the same Hermes/model setup:
+
+| Condition | Full pass | Visual-required full pass | Visual tool use on visual questions |
+|---|---:|---:|---:|
+| Transcript only | 16.7% | 0% | 0% |
+| **Multimodal tools enabled** | **50.0%** | **66.7%** | **100%** |
+
+On the transcript-answerable cases, multimodal mode made **no unnecessary visual-tool calls** in this frozen run. The project-level verdict is **`KEEP HERMES`**.
+
+Source of truth: [`runs/p3-live-paired-v2/report.json`](runs/p3-live-paired-v2/report.json).
+
+This is deliberately presented as a small product-oriented evaluation, not a broad video-QA benchmark claim.
 
 ## How it works
 
-```text
-question
-   |
-Hermes agent
-   |
-   +--> search transcript
-   +--> expand context
-   +--> inspect frame
-   +--> inspect clip
-   |
- answer + source evidence
+```mermaid
+flowchart TD
+    Q[Question] --> H[Hermes agent]
+    H --> T[Search transcript]
+    H --> C[Expand nearby context]
+    H --> F[Inspect frame]
+    H --> V[Inspect short clip]
+    T --> H
+    C --> H
+    F --> H
+    V --> H
+    H --> A[Grounded answer + evidence]
 ```
 
-The project exposes four tools:
+The project exposes four domain tools:
 
 - `search_transcript(query, top_k=5)`
 - `expand_context(segment_id)`
 - `inspect_frame(timestamp_s)`
 - `inspect_clip(start_s, end_s)`
 
-There is no fixed `search -> frame -> clip` sequence. Hermes decides which tool to call next from the question and previous tool output.
+Hermes owns the agent loop; the project supplies the tools and evidence contract.
 
-The UI shows tool activity and evidence summaries without exposing hidden chain-of-thought.
+## What the UI shows
 
-## Evaluation
+- the lecture video
+- the user question
+- final answer with evidence IDs
+- which tools the agent called
+- short activity summaries
+- transcript or visual evidence used for the answer
 
-The current frozen v2 evaluation is **complete**.
+The UI exposes tool activity and evidence without exposing hidden chain-of-thought.
 
-It uses a small paired local fixture with **12 questions**:
+## Quickstart
 
-- 6 transcript-answerable cases
-- 6 visual-required cases
+Prerequisites: Git, `uv`, ffmpeg, Ollama, and `qwen3.5:4b`.
 
-Each question is evaluated under two conditions using the same Hermes/model setup:
-
-1. **transcript-only** — visual tools are unavailable
-2. **multimodal** — frame and clip tools are available
-
-The evaluator keeps these checks separate:
-
-- answer correctness
-- citation validity
-- modality choice
-- evidence-window correctness
-
-The v2 run also records tool calls, latency, evidence, failure/abstention state, and per-case activity. The frozen report's project-level verdict is **`KEEP HERMES`**.
-
-Source of truth: [`runs/p3-live-paired-v2/report.json`](runs/p3-live-paired-v2/report.json).
-
-### Why v2 matters
-
-The historical v1 evaluation is intentionally not used as a performance claim because its scorer compared the full cited response against a short-answer label. That scoring contract did not match the output format.
-
-V2 fixes the evaluation contract by separating the short final answer from citation/evidence checks. The README now points to that completed run instead of saying the rerun is still pending.
-
-## Example
-
-A transcript question may only need one search:
-
-```text
-Q: What are the three stages of the tutor pipeline?
--> search_transcript(...)
-A: retrieve evidence, reason over it, and answer [E1]
-```
-
-A visual question can cause the agent to inspect video evidence:
-
-```text
-Q: What color is the highlighted component around 4 seconds?
--> search_transcript(...)
--> inspect_frame(4.0)
-A: blue [E2]
-```
-
-## Run locally
-
-On Windows:
+Windows:
 
 ```cmd
 run-demo.cmd
 ```
-
-Prerequisites are Git, `uv`, ffmpeg, Ollama, and `qwen3.5:4b`.
 
 CLI:
 
@@ -94,7 +91,7 @@ CLI:
 video-tutor ask "What are the three stages of the tutor pipeline?"
 ```
 
-To inspect tool activity and evidence summaries:
+Inspect tool activity and evidence:
 
 ```powershell
 .run\app-venv\Scripts\video-tutor.exe inspect --question "What color is the highlighted component around 4 seconds?"
@@ -102,22 +99,29 @@ To inspect tool activity and evidence summaries:
 
 The Streamlit UI and CLI use the same `TutorService`.
 
-## Implementation choices
+## Engineering choices
 
-- Hermes owns the agent loop; the project supplies the domain tools.
-- The tool list stays intentionally small.
-- Frame/clip tools return visual content to the model, not only file paths.
-- Clip inspection samples frames from a short range rather than sending arbitrary-length video.
-- Reference answers and evaluator labels are kept out of runtime inputs.
-- The agent can abstain when evidence is insufficient.
+- **Small tool surface.** Four tools are enough to express the useful agent behavior.
+- **Adaptive modality.** Visual inspection is available when needed instead of being mandatory for every question.
+- **Bounded video inspection.** Clip inspection samples frames from a short range rather than sending arbitrary-length video.
+- **Evidence-first output.** Frame/clip tools return visual content to the model, not only file paths.
+- **Abstention is allowed.** The tutor can decline when the available evidence is insufficient.
+- **Evaluation labels stay out of runtime inputs.** Reference answers are kept separate from the agent path.
 
-## Limits
+More detail: [`docs/architecture.md`](docs/architecture.md), [`docs/hermes-integration.md`](docs/hermes-integration.md), and [`docs/windows.md`](docs/windows.md).
+
+## Evaluation notes
+
+The historical v1 scorer compared the complete cited response against a short-answer label, so it is intentionally not used as a performance claim. V2 separates short-answer correctness from citation validity, modality choice, and evidence-window correctness.
+
+The frozen report also records tool calls, latency, evidence, failure/abstention state, and per-case activity.
+
+## Limitations
 
 - The 12-question fixture is self-authored and too small for broad video-QA claims.
 - Clip inspection uses sampled frames rather than native long-video input.
 - Results depend on the frozen local-model configuration.
-
-More detail is in `docs/architecture.md`, `docs/hermes-integration.md`, and `docs/windows.md`.
+- The demo is designed around lecture-style video rather than arbitrary long-form media.
 
 ## Development
 
