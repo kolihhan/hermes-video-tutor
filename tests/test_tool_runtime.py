@@ -52,6 +52,19 @@ def test_transcript_tool_commits_evidence_and_activity(tmp_path):
     assert runtime.activity.all()[0].tool == "search_transcript"
 
 
+def test_search_result_exposes_segment_id_needed_by_expand_context(tmp_path):
+    manifest = _fixture(tmp_path)
+    runtime = VideoToolRuntime(course_manifest=manifest, session_dir=tmp_path / "session")
+
+    search = json.loads(runtime.execute("search_transcript", {"query": "highlighted", "top_k": 1}))
+    segment_id = search["evidence"][0]["segment_id"]
+    expanded = json.loads(runtime.execute("expand_context", {"segment_id": segment_id, "before_s": 2, "after_s": 2}))
+
+    assert segment_id == "s2"
+    assert expanded["summary"] == "Expanded transcript context"
+    assert "highlighted component" in expanded["evidence"][0]["text"]
+
+
 def test_frame_tool_returns_current_hermes_multimodal_envelope(tmp_path):
     manifest = _fixture(tmp_path)
     runtime = VideoToolRuntime(course_manifest=manifest, session_dir=tmp_path / "session")
