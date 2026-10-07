@@ -67,7 +67,7 @@ On transcript-answerable cases, multimodal mode made **no unnecessary visual-too
 Source of truth: [`runs/p3-live-paired-v2/report.json`](runs/p3-live-paired-v2/report.json).
 
 > [!IMPORTANT]
-> This is a small, **self-authored** product-oriented paired evaluation, **not a broad video-QA benchmark claim**.
+> This is a small, **self-authored** product-oriented paired evaluation, **not a broad video-QA benchmark claim**. V2 full-pass uses a strict `FINAL: <short answer> [E#]` protocol with normalized equality to the canonical answer or an explicit alias; it should not be read as human semantic-accuracy scoring.
 
 ## How it works
 
@@ -89,8 +89,8 @@ The project exposes only four domain tools:
 
 | Tool | Purpose |
 |---|---|
-| `search_transcript(query, top_k=5)` | Find spoken evidence relevant to the question. |
-| `expand_context(segment_id)` | Pull nearby transcript context around a hit. |
+| `search_transcript(query, top_k=5)` | Find spoken evidence and return both evidence IDs and transcript segment IDs. |
+| `expand_context(segment_id)` | Pull nearby transcript context around a search hit. |
 | `inspect_frame(timestamp_s)` | Inspect a single visual moment. |
 | `inspect_clip(start_s, end_s)` | Inspect a short range when one frame is insufficient. |
 
@@ -145,13 +145,14 @@ video-tutor ask "What are the three stages of the tutor pipeline?"
 
 ## Evaluation notes
 
-The historical v1 scorer compared the complete cited response against a short-answer label, so it is not used as a performance claim. V2 separates short-answer correctness from citation validity, modality choice, and evidence-window correctness.
+The historical v1 scorer is not used as a performance claim. V2 separates strict short-answer correctness from citation validity, modality choice, and evidence-window correctness. A timed modality check is bound to evidence of the required modality, so a right-time transcript cannot make a wrong-time visual citation pass.
 
 The frozen report also records tool calls, latency, evidence, failure / abstention state, and per-case activity.
 
 ## Limitations
 
 - The 12-question fixture is **self-authored** and intentionally small.
+- V2 answer correctness is a strict protocol metric, not a semantic entailment or human-judged QA score.
 - Clip inspection uses sampled frames rather than native long-video input.
 - Results depend on the frozen local-model configuration.
 - The demo targets lecture-style video rather than arbitrary long-form media.

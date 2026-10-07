@@ -65,13 +65,20 @@ class VideoToolRuntime:
             raise ToolRuntimeError("top_k must be between 1 and 10")
         hits = self.transcript.search(query, top_k=top_k)
         records: list[Evidence] = []
+        payloads: list[dict[str, Any]] = []
         for hit in hits:
-            s = hit.segment
-            records.append(self.evidence.add(
-                kind="transcript", start_s=s.start_s, end_s=s.end_s, text=s.text
-            ))
+            segment = hit.segment
+            record = self.evidence.add(
+                kind="transcript", start_s=segment.start_s, end_s=segment.end_s, text=segment.text
+            )
+            records.append(record)
+            payload = self._evidence_payload(record)
+            # `expand_context` consumes the transcript segment key, so search must
+            # expose it alongside the evidence ID rather than forcing the model to guess.
+            payload["segment_id"] = segment.segment_id
+            payloads.append(payload)
         self._activity("search_transcript", f"Found {len(records)} transcript segment(s).", records)
-        return self._text_result("Transcript search results", records)
+        return json.dumps({"summary": "Transcript search results", "evidence": payloads}, ensure_ascii=False)
 
     def _expand(self, args: dict[str, Any]) -> str:
         segment_id = str(args.get("segment_id", "")).strip()

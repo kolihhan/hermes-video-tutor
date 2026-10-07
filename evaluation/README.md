@@ -1,5 +1,3 @@
-> **Review-v2 note:** `p3-live-paired-v1` is historical evidence only; its answer metric was construct-invalid. The next canonical run uses the frozen v2 `FINAL:` short-answer contract and writes `runs/p3-live-paired-v2/report.json`.
-
 # Evaluation
 
 Evaluation labels are physically separate from runtime inputs.
@@ -12,54 +10,40 @@ The bundled three-case fixture is a deterministic product sanity check, not a re
 
 ## Frozen live paired evaluation
 
-`live_inference_cases.json` and `live_gold_labels.json` are a separate frozen
-12-case set over `fixture/`: six transcript-answerable cases and six
-visual-required cases. The fixture is self-authored, ffmpeg-generated, CC0-1.0,
-and contains no third-party source media. `fixture/provenance.json` records the
-generator, font, ffmpeg version, duration, and every generated asset hash.
+`live_inference_cases.json` and `live_gold_labels.json` define the current frozen 12-case fixture: six transcript-answerable cases and six visual-required cases. The fixture is self-authored, ffmpeg-generated, CC0-1.0, and contains no third-party source media. `fixture/provenance.json` records generated-asset provenance and hashes.
 
-The two conditions use the same Hermes v0.20.4 revision, custom
-`qwen3.5-hermes:4b` model, config, prompt, questions, transcript, and media.
-Only the `video_tutor` project toolset changes:
+The two conditions use the same Hermes v0.20.4 revision, custom `qwen3.5-hermes:4b` model, config, prompt, questions, transcript, and media. Only the project tool surface changes:
 
 - `transcript_only`: transcript search/context tools only.
 - `multimodal`: the same tools plus bounded frame/clip inspection.
 
-The runner enforces the frozen input hashes, exact project-local Hermes
-checkout/config, full Ollama model digests, 65,536-token custom context parameter,
-tool surfaces, implementation hashes, alternating arm order, 600-second case
-timeout, a new output path, and atomic report creation. Hermes receives only
-runtime cases; gold is loaded by the evaluator and is inaccessible through the
-restricted toolset.
+Hermes receives only runtime cases; gold is loaded by the evaluator after inference and is inaccessible through the restricted toolset.
 
-Answers pass only by normalized equality to a canonical answer or explicit
-alias. Citation existence, cited modality, and evidence-window overlap are
-reported separately; they are not semantic-entailment claims. The report also
-contains per-case evidence/activity, latency, tool calls, and native Hermes
-API-call/token/cost usage.
+### Scoring contract
+
+V2 requires the model to emit `FINAL: <short answer> [E#]`. `answer_correct` is intentionally a **strict protocol score**: after parsing the `FINAL:` answer, normalized text must equal the canonical answer or an explicit alias. It is not a human semantic-accuracy judge. A semantically reasonable but overlong response can therefore score false.
+
+Citation existence, required modality, and evidence-window overlap are separate checks. For a timed visual case, the evidence that satisfies the visual requirement must itself overlap the expected window; a transcript citation at the right time cannot rescue a visual citation from the wrong time. These checks establish protocol consistency, not semantic entailment between evidence and answer.
+
+## Current canonical result: v2
+
+Source of truth: `runs/p3-live-paired-v2/report.json`.
+
+| Condition | Full pass | Visual-required full pass | Visual tool use on visual questions |
+|---|---:|---:|---:|
+| Transcript only | 16.7% | 0% | 0% |
+| Multimodal tools enabled | **50.0%** | **66.7%** | **100%** |
+
+Multimodal mode made no unnecessary visual-tool calls on the six transcript-answerable cases in this frozen run.
+
+This is a small self-authored product-oriented paired evaluation, not a broad video-QA benchmark claim. The frozen v2 report is not silently rescored when evaluator contracts change; code fixes that strengthen future evaluator invariants are regression-tested separately.
 
 ```powershell
 .run\app-venv\Scripts\python.exe -m evaluation.run_live_paired --output runs\p3-live-paired-v2\report.json
 ```
 
-The canonical report path is single-use; do not rerun a valid result.
+The canonical report path is single-use; do not overwrite a valid frozen result.
 
-## Canonical result
+## Historical v1
 
-`runs/p3-live-paired-v1/report.json` is complete (12 cases per arm) and freezes
-`SIMPLIFY`. Transcript-only and Multimodal each scored `0/12` answer correctness
-and `0/12` full pass. Multimodal used visual tools on `4/6` visual cases and
-`0/6` transcript cases, but produced no scored answer gain. Native usage was 70
-API calls / 172,974 tokens for Transcript-only and 116 / 310,036 for
-Multimodal. The usage files contain `estimated_cost_usd: 0.0` but also
-`cost_status: unknown` / `cost_source: none`, so monetary cost is unavailable,
-not verified as zero.
-
-Post-run validation found that the original evaluator adapter read `id` while
-native `Evidence` serializes `evidence_id`. The original report is preserved at
-`report.invalid-evaluator-evidence-key-20260829-b.json` (SHA-256
-`f11aeacbf9d04348c7aecd8bc90aa51e98308015236721d5a1dcbba902442fdd`).
-The canonical report deterministically rescores the exact unchanged predictions
-with the native field name and records both evaluator hashes; no inference was
-rerun, and no decision metric or verdict changed. Its SHA-256 is
-`c4847605a65970e24ff67ac9b68565d32fbc876eba83d0b971e026624bbd9260`.
+`p3-live-paired-v1` is historical evidence only. Its original answer/evidence adapter was construct-invalid for the current claim, including an `id` versus native `evidence_id` mismatch. The original artifact and deterministic rescore are preserved for auditability, but v1 is not the portfolio performance claim and does not override the v2 result above.
