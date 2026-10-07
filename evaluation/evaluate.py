@@ -56,18 +56,36 @@ def _modality_matches(required: str, cited: Iterable[dict[str, Any]]) -> bool:
     raise ValueError(f"unknown required modality: {required}")
 
 
-def _window_matches(window: object, cited: Iterable[dict[str, Any]]) -> bool:
+def _overlaps_window(row: dict[str, Any], expected_start: float, expected_end: float) -> bool:
+    start = float(row.get("start_s", -1))
+    end = float(row.get("end_s", start))
+    return end >= expected_start and start <= expected_end
+
+
+def _window_matches_required_modality(
+    window: object,
+    required: str,
+    cited: Iterable[dict[str, Any]],
+) -> bool:
     if window is None:
         return True
     if not isinstance(window, list) or len(window) != 2:
         raise ValueError("expected_evidence_window must be [start_s, end_s]")
     expected_start, expected_end = float(window[0]), float(window[1])
-    for row in cited:
-        start = float(row.get("start_s", -1))
-        end = float(row.get("end_s", start))
-        if end >= expected_start and start <= expected_end:
-            return True
-    return False
+    rows = tuple(cited)
+
+    def any_overlap(kinds: set[str]) -> bool:
+        return any(str(row.get("kind", "")) in kinds and _overlaps_window(row, expected_start, expected_end) for row in rows)
+
+    if required == "transcript":
+        return any_overlap({"transcript"})
+    if required == "visual":
+        return any_overlap({"frame", "clip"})
+    if required == "clip":
+        return any_overlap({"clip"})
+    if required == "mixed":
+        return any_overlap({"transcript"}) and any_overlap({"frame", "clip"})
+    raise ValueError(f"unknown required modality: {required}")
 
 
 def evaluate_prediction(prediction: dict[str, Any], gold: dict[str, Any]) -> EvaluationResult:
@@ -82,8 +100,11 @@ def evaluate_prediction(prediction: dict[str, Any], gold: dict[str, Any]) -> Eva
     answer_correct = _normalize_answer(short_answer) in {_normalize_answer(item) for item in accepted}
     cited = _cited_evidence(prediction)
     citation_valid = bool(cited)
-    modality_correct = citation_valid and _modality_matches(str(gold["required_modality"]), cited)
-    evidence_window_correct = citation_valid and _window_matches(gold.get("expected_evidence_window"), cited)
+    required_modality = str(gold["required_modality"])
+    modality_correct = citation_valid and _modality_matches(required_modality, cited)
+    evidence_window_correct = modality_correct and _window_matches_required_modality(
+        gold.get("expected_evidence_window"), required_modality, cited
+    )
     passed = answer_correct and citation_valid and modality_correct and evidence_window_correct
     return EvaluationResult(
         case_id=case_id,
