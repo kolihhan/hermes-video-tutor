@@ -71,7 +71,12 @@ class VideoToolRuntime:
                 kind="transcript", start_s=s.start_s, end_s=s.end_s, text=s.text
             ))
         self._activity("search_transcript", f"Found {len(records)} transcript segment(s).", records)
-        return self._text_result("Transcript search results", records)
+        evidence = []
+        for record, hit in zip(records, hits):
+            payload = self._evidence_payload(record)
+            payload["segment_id"] = hit.segment.segment_id
+            evidence.append(payload)
+        return json.dumps({"summary": "Transcript search results", "evidence": evidence}, ensure_ascii=False)
 
     def _expand(self, args: dict[str, Any]) -> str:
         segment_id = str(args.get("segment_id", "")).strip()
