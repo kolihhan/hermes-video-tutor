@@ -8,7 +8,8 @@ from video_tutor.final_answer import FinalAnswerFormatError, extract_citation_id
 
 _NON_WORD_RE = re.compile(r"[^a-z0-9]+")
 _CONTRADICTION_TOKENS = {"not", "no", "never", "without", "wrong", "incorrect", "false"}
-_CONTRADICTORY_SUFFIXES = {"later", "earlier", "before", "after", "ago"}
+_AMBIGUITY_TOKENS = {"and", "or", "maybe", "perhaps", "either", "versus", "vs"}
+_DECLARATIVE_ENDINGS = {"is", "are", "was", "were", "equals", "means", "called", "named"}
 
 
 @dataclass(frozen=True)
@@ -40,17 +41,15 @@ def _answer_matches(short_answer: str, accepted: Iterable[str]) -> bool:
         if candidate == alias:
             return True
         alias_tokens = alias.split()
-        if len(candidate_tokens) > 8 or len(alias_tokens) > len(candidate_tokens):
+        if len(candidate_tokens) > 8 or len(alias_tokens) >= len(candidate_tokens):
             continue
-        if any(token in _CONTRADICTION_TOKENS for token in candidate_tokens):
+        if any(token in _CONTRADICTION_TOKENS | _AMBIGUITY_TOKENS for token in candidate_tokens):
             continue
         width = len(alias_tokens)
-        for start in range(len(candidate_tokens) - width + 1):
-            if candidate_tokens[start:start + width] != alias_tokens:
-                continue
-            suffix = candidate_tokens[start + width:]
-            if suffix and suffix[0] in _CONTRADICTORY_SUFFIXES:
-                continue
+        if candidate_tokens[-width:] != alias_tokens:
+            continue
+        prefix = candidate_tokens[:-width]
+        if prefix and prefix[-1] in _DECLARATIVE_ENDINGS:
             return True
     return False
 
