@@ -91,6 +91,20 @@ def test_evaluator_accepts_only_canonical_answers_or_explicit_aliases():
     assert not evaluate_prediction({"case_id": "q", "answer": "FINAL: five minutes later [E1]", "evidence": evidence}, gold).answer_correct
 
 
+def test_short_answer_match_accepts_bounded_declarative_wrapper_but_not_negation():
+    from evaluation.evaluate import evaluate_prediction
+
+    gold = {
+        "case_id": "q", "reference_answer": "orion", "accepted_aliases": [],
+        "required_modality": "transcript", "expected_evidence_window": [0, 5],
+    }
+    evidence = [{"evidence_id": "E1", "kind": "transcript", "start_s": 1, "end_s": 2}]
+    wrapped = {"case_id": "q", "answer": "FINAL: The project codename is Orion [E1]", "evidence": evidence}
+    negated = {"case_id": "q", "answer": "FINAL: The project codename is not Orion [E1]", "evidence": evidence}
+    assert evaluate_prediction(wrapped, gold).answer_correct is True
+    assert evaluate_prediction(negated, gold).answer_correct is False
+
+
 def test_frozen_live_set_has_physically_separate_twelve_runtime_and_gold_rows():
     runtime = json.loads((ROOT / "evaluation" / "live_inference_cases.json").read_text(encoding="utf-8"))
     gold = json.loads((ROOT / "evaluation" / "live_gold_labels.json").read_text(encoding="utf-8"))
