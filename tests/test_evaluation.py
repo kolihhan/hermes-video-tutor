@@ -149,3 +149,30 @@ def test_v2_evaluator_extracts_only_final_short_answer_before_citations():
     assert evaluate_prediction(good, gold).answer_correct is True
     assert evaluate_prediction(prose, gold).answer_correct is False
     assert evaluate_prediction(wrong, gold).answer_correct is False
+
+
+def test_posthoc_rescore_of_frozen_raw_outputs_quantifies_contract_loss():
+    from evaluation.evaluate import evaluate_predictions
+
+    report = json.loads((ROOT / "runs" / "p3-live-paired-v2" / "report.json").read_text(encoding="utf-8"))
+    gold = json.loads((ROOT / "evaluation" / "live_gold_labels.json").read_text(encoding="utf-8"))
+
+    rescored = {}
+    for condition in ("transcript_only", "multimodal"):
+        predictions = []
+        for row in report["conditions"][condition]["predictions"]:
+            prediction = dict(row)
+            prediction["answer"] = row["raw_model_answer"]
+            predictions.append(prediction)
+        rescored[condition] = evaluate_predictions(predictions, gold)
+
+    assert rescored["transcript_only"]["full_pass"] == {
+        "overall": 0.5,
+        "transcript_only": 1.0,
+        "visual_required": 0.0,
+    }
+    assert rescored["multimodal"]["full_pass"] == {
+        "overall": 1.0,
+        "transcript_only": 1.0,
+        "visual_required": 1.0,
+    }
