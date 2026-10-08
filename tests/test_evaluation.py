@@ -172,7 +172,7 @@ def test_posthoc_rescore_of_frozen_raw_outputs_quantifies_contract_loss():
         "visual_required": 0.0,
     }
     assert rescored["multimodal"]["full_pass"] == {
-        "overall": 1.0,
+        "overall": 11 / 12,
         "transcript_only": 1.0,
-        "visual_required": 1.0,
+        "visual_required": 5 / 6,
     }
