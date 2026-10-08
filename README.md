@@ -71,14 +71,14 @@ Source of truth: [`runs/p3-live-paired-v2/report.json`](runs/p3-live-paired-v2/r
 
 ### Evaluator-remediation diagnostic
 
-A later review found that the frozen v2 evaluator treated harmless output-format variants and short declarative wrappers as failures. The parser/evaluator now accepts grouped citations such as `[E1, E2]`, harmless trailing punctuation, and bounded non-negated wrappers such as `The project codename is Orion` for the short answer `Orion`.
+A later review found that the frozen v2 evaluator treated harmless output-format variants and short declarative wrappers as failures. The parser/evaluator now accepts grouped citations such as `[E1, E2]`, harmless trailing punctuation, and bounded non-negated declarative wrappers such as `The project codename is Orion` for the short answer `Orion`. Ambiguous forms such as `Orion or Atlas` or `green and blue` are deliberately rejected.
 
-Re-scoring the **preserved raw model outputs from the same v2 run** under that corrected contract gives:
+Re-scoring the **preserved raw model outputs from the same v2 run** under that corrected conservative contract gives:
 
 | Condition | Post-hoc full pass | Transcript cases | Visual-required cases |
 |---|---:|---:|---:|
 | Transcript only | 6 / 12 | 6 / 6 | 0 / 6 |
-| Multimodal tools enabled | **12 / 12** | **6 / 6** | **6 / 6** |
+| Multimodal tools enabled | **11 / 12** | **6 / 6** | **5 / 6** |
 
 This is a **post-hoc diagnostic, not a fresh benchmark run**. It quantifies how much the old output contract compressed the frozen result; it is not promoted over the original v2 source-of-truth score until the frozen live evaluation is rerun end to end.
 
@@ -169,7 +169,7 @@ The frozen report also records tool calls, latency, evidence, failure / abstenti
 ## Limitations
 
 - The 12-question fixture is **self-authored** and intentionally small.
-- The 12/12 remediation number is a post-hoc re-score of preserved raw outputs, not a fresh run.
+- The 11/12 remediation number is a post-hoc re-score of preserved raw outputs, not a fresh run.
 - Clip inspection uses sampled frames rather than native long-video input.
 - Results depend on the frozen local-model configuration.
 - The demo targets lecture-style video rather than arbitrary long-form media.
