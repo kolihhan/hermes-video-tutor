@@ -91,6 +91,21 @@ def test_tutor_service_delegates_agent_loop_and_returns_session_evidence(tmp_pat
     assert len(runtime.requests) == 1
 
 
+def test_tutor_service_accepts_trailing_punctuation_and_grouped_citations(tmp_path):
+    class FormattingRuntime:
+        def ask(self, request):
+            store = EvidenceStore(request.session_dir)
+            store.add(kind="frame", start_s=0, end_s=0, text="GO")
+            store.add(kind="transcript", start_s=0, end_s=5, text="The signal is GO.")
+            return "FINAL: GO [E1, E2]."
+
+    answer = TutorService(runtime=FormattingRuntime(), session_root=tmp_path / "sessions").ask(
+        question="What is the signal?", course_manifest=_course(tmp_path)
+    )
+    assert answer.status == "answered"
+    assert answer.rejection_reason is None
+
+
 def test_tutor_service_fails_closed_on_uncited_or_insufficient_answer(tmp_path):
     course = _course(tmp_path)
     uncited = TutorService(runtime=FakeRuntime("uncited"), session_root=tmp_path / "a").ask(

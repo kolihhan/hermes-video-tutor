@@ -4,10 +4,11 @@ from dataclasses import asdict, dataclass
 import re
 from typing import Any, Iterable
 
-from video_tutor.final_answer import FinalAnswerFormatError, parse_final_answer
+from video_tutor.final_answer import FinalAnswerFormatError, extract_citation_ids, parse_final_answer
 
-_CITATION_RE = re.compile(r"\[(E\d+)\]", re.IGNORECASE)
 _NON_WORD_RE = re.compile(r"[^a-z0-9]+")
+_CONTRADICTION_TOKENS = {"not", "no", "never", "without", "wrong", "incorrect", "false"}
+_CONTRADICTORY_SUFFIXES = {"later", "earlier", "before", "after", "ago"}
 
 
 @dataclass(frozen=True)
@@ -24,12 +25,38 @@ class EvaluationResult:
 
 
 def _normalize_answer(text: str) -> str:
-    without_citations = _CITATION_RE.sub(" ", text.lower())
-    return " ".join(_NON_WORD_RE.sub(" ", without_citations).split())
+    return " ".join(_NON_WORD_RE.sub(" ", text.lower()).split())
+
+
+def _answer_matches(short_answer: str, accepted: Iterable[str]) -> bool:
+    candidate = _normalize_answer(short_answer)
+    if not candidate:
+        return False
+    candidate_tokens = candidate.split()
+    for raw in accepted:
+        alias = _normalize_answer(raw)
+        if not alias:
+            continue
+        if candidate == alias:
+            return True
+        alias_tokens = alias.split()
+        if len(candidate_tokens) > 8 or len(alias_tokens) > len(candidate_tokens):
+            continue
+        if any(token in _CONTRADICTION_TOKENS for token in candidate_tokens):
+            continue
+        width = len(alias_tokens)
+        for start in range(len(candidate_tokens) - width + 1):
+            if candidate_tokens[start:start + width] != alias_tokens:
+                continue
+            suffix = candidate_tokens[start + width:]
+            if suffix and suffix[0] in _CONTRADICTORY_SUFFIXES:
+                continue
+            return True
+    return False
 
 
 def _cited_evidence(prediction: dict[str, Any]) -> tuple[dict[str, Any], ...]:
-    cited_ids = tuple(dict.fromkeys(item.upper() for item in _CITATION_RE.findall(str(prediction.get("answer", "")))))
+    cited_ids = extract_citation_ids(str(prediction.get("answer", "")))
     evidence = prediction.get("evidence", [])
     if not isinstance(evidence, list):
         return ()
@@ -81,7 +108,7 @@ def evaluate_prediction(prediction: dict[str, Any], gold: dict[str, Any]) -> Eva
         short_answer = parse_final_answer(str(prediction.get("answer", "")))
     except FinalAnswerFormatError:
         short_answer = ""
-    answer_correct = _normalize_answer(short_answer) in {_normalize_answer(item) for item in accepted}
+    answer_correct = _answer_matches(short_answer, accepted)
     cited = _cited_evidence(prediction)
     citation_valid = bool(cited)
     required_modality = str(gold["required_modality"])
