@@ -22,5 +22,12 @@ def test_citation_validator_rejects_unknown_ids(tmp_path):
         validate_citations("Answer [E2]", store.all())
 
 
+def test_citation_validator_accepts_grouped_ids(tmp_path):
+    store = EvidenceStore(tmp_path)
+    store.add(kind="frame", start_s=0, end_s=1, text="x")
+    store.add(kind="transcript", start_s=0, end_s=1, text="y")
+    assert validate_citations("FINAL: GO [E1, E2]", store.all()) == ("E1", "E2")
+
+
 def test_no_citation_is_allowed_for_explicit_abstention(tmp_path):
     assert validate_citations("Insufficient evidence to determine this.", (), allow_empty=True) == ()
