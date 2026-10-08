@@ -3,16 +3,11 @@ from __future__ import annotations
 from dataclasses import asdict
 import json
 from pathlib import Path
-import re
 from threading import RLock
 from typing import Iterable
 
 from .contracts import Evidence, EvidenceKind
-
-_CITATION_RE = re.compile(r"\[(E\d+)\]")
-_FINAL_RE = re.compile(
-    r"FINAL:\s*(?P<answer>[^\r\n\[\]]+?)\s+(?P<citations>(?:\[E\d+\]\s*)+)"
-)
+from .final_answer import FinalAnswerFormatError, extract_citation_ids, parse_final_answer as _parse_final_answer
 
 
 class CitationError(ValueError):
@@ -20,10 +15,10 @@ class CitationError(ValueError):
 
 
 def parse_final_answer(text: str) -> str:
-    match = _FINAL_RE.fullmatch(text.strip())
-    if match is None or not match.group("answer").strip():
-        raise CitationError("answer must match FINAL: <short answer> [E#]")
-    return match.group("answer").strip()
+    try:
+        return _parse_final_answer(text)
+    except FinalAnswerFormatError as exc:
+        raise CitationError(str(exc)) from exc
 
 
 class EvidenceStore:
@@ -87,7 +82,7 @@ def validate_citations(
     *,
     allow_empty: bool = False,
 ) -> tuple[str, ...]:
-    cited = tuple(dict.fromkeys(_CITATION_RE.findall(text)))
+    cited = extract_citation_ids(text)
     if not cited and not allow_empty:
         raise CitationError("answer must cite evidence")
     known = {item.evidence_id for item in evidence}
